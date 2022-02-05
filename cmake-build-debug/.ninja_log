@@ -6,3 +6,6 @@
 32	291	6658033737240170	CMakeFiles/5b.dir/libs/data_structures/vector/vector.c.obj	eb7ff7dbf5e12f32
 29	300	6658033737340860	CMakeFiles/5b.dir/libs/algorithms/array/array.c.obj	c79c99c4f83c4aa0
 300	643	6658033740614553	5b.exe	d38508c8fcee0aab
+5	192	6658043387218295	CMakeFiles/5b.dir/main.c.obj	cc48553c73ec56f5
+33	196	6658043387238242	CMakeFiles/5b.dir/libs/data_structures/vector/vector.c.obj	eb7ff7dbf5e12f32
+206	355	6658043388690036	5b.exe	d38508c8fcee0aab
