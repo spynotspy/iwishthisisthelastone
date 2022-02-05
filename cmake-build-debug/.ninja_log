@@ -1,3 +1,8 @@
 # ninja log v5
 2	208	6657940448294920	CMakeFiles/5b.dir/main.c.obj	cc48553c73ec56f5
 208	361	6657940449685525	5b.exe	5bcba929eaa4d89b
+26	247	6658033736562694	CMakeFiles/5b.dir/libs/algorithms/algorithm.c.obj	df6bf6d784eb176d
+3	278	6658033737081833	CMakeFiles/5b.dir/main.c.obj	cc48553c73ec56f5
+32	291	6658033737240170	CMakeFiles/5b.dir/libs/data_structures/vector/vector.c.obj	eb7ff7dbf5e12f32
+29	300	6658033737340860	CMakeFiles/5b.dir/libs/algorithms/array/array.c.obj	c79c99c4f83c4aa0
+300	643	6658033740614553	5b.exe	d38508c8fcee0aab
