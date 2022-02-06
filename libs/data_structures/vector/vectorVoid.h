@@ -5,6 +5,7 @@
 #ifndef INC_5B_VECTORVOID_H
 #define INC_5B_VECTORVOID_H
 
+#include <stdbool.h>
 #include <stdlib.h>
 
 typedef struct vectorVoid {
@@ -33,5 +34,22 @@ void clearV(vectorVoid *v);
 //освобождает память, выделенную вектору v.
 void deleteVectorV(vectorVoid *v);
 
+//возвращает 1, если вектор пуст
+bool isEmptyV(vectorVoid *v);
+
+//возвращает 1, если вектор полон
+bool isFullV(vectorVoid *v);
+
+//записывает по адресу destination index-ый элемент вектора v
+void getVectorValueV(vectorVoid *v, size_t index, void *destination);
+
+//записывает на index-ый элемент вектора v значение, расположенное по адресу source
+void setVectorValueV(vectorVoid *v, size_t index, void *source);
+
+//удаляет последний элемент из вектора v
+void popBackV(vectorVoid *v);
+
+//добавляет элемент х в конец вектора v
+void pushBackV(vectorVoid *v, int x);
 
 #endif //INC_5B_VECTORVOID_H
