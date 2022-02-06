@@ -1,6 +1,7 @@
 #include <stdio.h>
-#include "libs/data_structures/vector/vector.h"
 #include <assert.h>
+#include "libs/data_structures/vector/vector.h"
+#include "libs/data_structures/vector/vectorVoid.h"
 
 void test_pushBack_emptyVector() {
     vector v = createVector(0);
@@ -80,7 +81,9 @@ void test() {
 }
 
 int main() {
-    test();
+    //test();
+    size_t n = 5;
+    vectorVoid v = {(float *) malloc(sizeof(float) * n), 0, n, sizeof(float)};
 
     return 0;
 }
