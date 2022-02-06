@@ -6,7 +6,7 @@
 #include "vectorVoid.h"
 
 vectorVoid createVectorV(size_t n, size_t baseTypeSize) {
-    vectorVoid v = {(void *) (malloc(baseTypeSize * n)), 0, n};
+    vectorVoid v = {(malloc(sizeof(baseTypeSize) * n)), 0, n, baseTypeSize};
     if (n == 0)
         v.data = NULL;
     else if (v.data == NULL) {
@@ -17,13 +17,13 @@ vectorVoid createVectorV(size_t n, size_t baseTypeSize) {
 }
 
 void reserveV(vectorVoid *v, size_t newCapacity) {
-    v->data = (void *) realloc(v->data, v->baseTypeSize * newCapacity);
+    v->data = realloc(v->data, sizeof(v->baseTypeSize) * newCapacity);
     if (v->data == NULL) {
         fprintf(stderr, "bad alloc");
         exit(1);
-    } else if (newCapacity == 0)
-        v->data = NULL;
-    else if (newCapacity < v->size)
+    } else if (newCapacity == 0) {
+        deleteVectorV(v);
+    } else if (newCapacity < v->size)
         v->size = newCapacity;
     v->capacity = newCapacity;
 }
@@ -39,7 +39,7 @@ void clearV(vectorVoid *v) {
 void deleteVectorV(vectorVoid *v) {
     free(v->data);
     v->data = NULL;
-    v->size = 0;
+    v->data = 0;
     v->capacity = 0;
 }
 
@@ -65,8 +65,8 @@ void setVectorValueV(vectorVoid *v, size_t index, void *source) {
         fprintf(stderr, "wrong index");
         exit(1);
     }
-    char *pElement = (char *) v->data + index * v->baseTypeSize;
-    memcpy(pElement, source, v->baseTypeSize);
+    char *destination = (char *) v->data + index * v->baseTypeSize;
+    memcpy(source, destination, v->baseTypeSize);
 }
 
 void popBackV(vectorVoid *v) {
@@ -77,20 +77,13 @@ void popBackV(vectorVoid *v) {
         v->size--;
 }
 
-void pushBackV(vectorVoid *v, int x) {
-    if (v->capacity == 0) {
-        reserveV(v, v->capacity + 1);
-        char *source = (char *) v->data + v->size * v->baseTypeSize;
-        memcpy(source, &x, v->baseTypeSize);
-        v->size++;
-    } else if (isFullV(v)) {
+void pushBackV(vectorVoid *v, void *source) {
+    if (v->capacity == 0)
+        reserveV(v, 1);
+    else if (isFullV(v))
         reserveV(v, v->capacity * 2);
-        char *source = (char *) v->data + v->size * v->baseTypeSize;
-        memcpy(source, &x, v->baseTypeSize);
-        v->size++;
-    } else {
-        char *source = (char *) v->data + v->size * v->baseTypeSize;
-        memcpy(source, &x, v->baseTypeSize);
-        v->size++;
-    }
+
+    char *destination = (char *) v->data + v->size * v->baseTypeSize;
+    memcpy(destination, source, v->baseTypeSize);
+    v->size++;
 }

@@ -50,6 +50,6 @@ void setVectorValueV(vectorVoid *v, size_t index, void *source);
 void popBackV(vectorVoid *v);
 
 //добавляет элемент х в конец вектора v
-void pushBackV(vectorVoid *v, int x);
+void pushBackV(vectorVoid *v, void *source);
 
 #endif //INC_5B_VECTORVOID_H
