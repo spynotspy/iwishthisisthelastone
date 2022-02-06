@@ -83,7 +83,12 @@ void test() {
 int main() {
     //test();
     size_t n = 5;
-    vectorVoid v = {(float *) malloc(sizeof(float) * n), 0, n, sizeof(float)};
+    vectorVoid v = {(void *) malloc(sizeof(float) * n), 0, n, sizeof(float)};
+
+
+    int q = sizeof(int);
+    int w = sizeof(float);
+    printf("%d %d", q, w);
 
     return 0;
 }
