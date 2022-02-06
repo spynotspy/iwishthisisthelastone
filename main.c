@@ -70,6 +70,50 @@ void test_front_oneElementInVector() {
     deleteVector(&v);
 }
 
+void test_getVectorValueV_requestToLastElement() {
+    vectorVoid v = createVectorV(3, sizeof(int));
+    int x = 1;
+    pushBackV(&v, &x);
+    x = 2;
+    pushBackV(&v, &x);
+    x = 3;
+    pushBackV(&v, &x);
+
+    getVectorValueV(&v, 2, &x);
+    assert(x == 3);
+
+    deleteVectorV(&v);
+}
+
+void test_setVectorValueV_requestToLastElement() {
+    vectorVoid v = createVectorV(3, sizeof(int));
+    int x = 1;
+    pushBackV(&v, &x);
+    x = 2;
+    pushBackV(&v, &x);
+    x = 3;
+    pushBackV(&v, &x);
+    x = 42;
+
+    setVectorValueV(&v, 2, &x);
+    int z;
+    getVectorValueV(&v, 2, &z);
+    assert(z == 42);
+
+    deleteVectorV(&v);
+}
+
+void test_popBackV_notEmptyVector() {
+    vectorVoid v = createVectorV(0, sizeof(int));
+    int x = 10;
+    pushBackV(&v, &x);
+    assert (v.size == 1);
+    popBackV(&v);
+    assert (v.size == 0);
+    assert (v.capacity == 1);
+    deleteVectorV(&v);
+}
+
 void test() {
     test_pushBack_emptyVector();
     test_pushBack_fullVector();
@@ -78,44 +122,13 @@ void test() {
     test_atVector_requestToLastElement();
     test_back_oneElementInVector();
     test_front_oneElementInVector();
+    test_getVectorValueV_requestToLastElement();
+    test_setVectorValueV_requestToLastElement();
+    test_popBackV_notEmptyVector();
 }
 
 int main() {
-//    size_t n;
-//    scanf("%zd", &n);
-//
-//    vectorVoid v = createVectorV(0, sizeof(int));
-//    for (int i = 0; i < n; i++) {
-//        int x;
-//        scanf("%d", &x);
-//
-//        pushBackV(&v, &x);
-//    }
-//
-//    for (int i = 0; i < n; i++) {
-//        int x;
-//        getVectorValueV(&v, i, &x);
-//
-//        printf("%d ", x);
-//    }
-
-    size_t n;
-    scanf("%zd", &n);
-
-    vectorVoid v = createVectorV(0, sizeof(float));
-    for (int i = 0; i < n; i++) {
-        float x;
-        scanf("%f", &x);
-
-        pushBackV(&v, &x);
-    }
-
-    for (int i = 0; i < n; i++) {
-        float x;
-        getVectorValueV(&v, i, &x);
-
-        printf("%f ", x);
-    }
+    test();
 
 
     return 0;

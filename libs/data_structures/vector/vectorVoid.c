@@ -66,7 +66,7 @@ void setVectorValueV(vectorVoid *v, size_t index, void *source) {
         exit(1);
     }
     char *destination = (char *) v->data + index * v->baseTypeSize;
-    memcpy(source, destination, v->baseTypeSize);
+    memcpy(destination, source, v->baseTypeSize);
 }
 
 void popBackV(vectorVoid *v) {
