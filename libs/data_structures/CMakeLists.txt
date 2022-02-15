@@ -1,2 +1,3 @@
-add_library(data_structures vector/vector.c
-        data_structures vector/vectorVoid.c)
+add_library(data_structures matrix/matrix.c
+        )
+target_link_libraries(data_structures algorithms)

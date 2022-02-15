@@ -5,7 +5,6 @@
 #ifndef INC_5B_ARRAY_H
 #define INC_5B_ARRAY_H
 
-
 int compare_ints(const void *a, const void *b);
 
 //ввод массива data размера n
@@ -84,5 +83,11 @@ void swap(int *a, int *b);
 //сортировка выбором массива a размера n
 void selectionSort(int *a, const size_t n);
 
+//сортировка вставками массива a размера n
+void insertionSort(int *a, const size_t size);
+
+int firstMinElementSearch(const int *const a, const size_t n);
+
+int negativeElementsCount(int *a, int n);
 
 #endif //INC_5B_ARRAY_H

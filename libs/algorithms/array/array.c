@@ -239,3 +239,36 @@ void selectionSort(int *a, const size_t n) {
         swap(&a[i], &a[min]);
     }
 }
+
+void insertionSort(int *a, const size_t size) {
+    for (size_t i = 1; i < size; i++) {
+        int t = a[i];
+        int j = i;
+        while (j > 0 && a[j - 1] > t) {
+            a[j] = a[j - 1];
+            j--;
+        }
+        a[j] = t;
+    }
+}
+
+int firstMinElementSearch(const int *const a, const size_t n){
+    int firsrIndexMin = 0;
+    int min = a[0];
+    for (int i = 0; i < n; ++i) {
+        if (a[i] < min){
+            firsrIndexMin = i;
+            min = a[i];
+        }
+    }
+    return firsrIndexMin;
+}
+
+int negativeElementsCount(int *a, int n) {
+    int count = 0;
+    for (size_t i = 0; i < n; i++) {
+        if (a[i] < 0)
+            count++;
+    }
+    return count;
+}
