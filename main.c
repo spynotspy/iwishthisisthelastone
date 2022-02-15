@@ -304,16 +304,29 @@ void sortRowsByMaxElement(matrix m) {
     insertionSortRowsMatrixByRowCriteria(m, getMax);
 }
 
+int getMin(int *a, int n) {
+    int firstIndexMin = 0;
+    int min = a[0];
+    for (int i = 0; i < n; ++i) {
+        if (a[i] < min) {
+            firstIndexMin = i;
+            min = a[i];
+        }
+    }
+    return min;
+}
+
+void sortColsByMinElement(matrix m) {
+    insertionSortColsMatrixByColCriteria(m, getMin);
+}
+
 int main() {
     //test();
 
-    matrix m = getMemMatrix(3, 3);
+    matrix m = getMemMatrix(3, 6);
     inputMatrix(m);
-
-    sortRowsByMaxElement(m);
-
+    sortColsByMinElement(m);
     outputMatrix(m);
-
     freeMemMatrix(m);
 
     return 0;

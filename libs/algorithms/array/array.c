@@ -253,15 +253,15 @@ void insertionSort(int *a, const size_t size) {
 }
 
 int firstMinElementSearch(const int *const a, const size_t n){
-    int firsrIndexMin = 0;
+    int firstIndexMin = 0;
     int min = a[0];
     for (int i = 0; i < n; ++i) {
         if (a[i] < min){
-            firsrIndexMin = i;
+            firstIndexMin = i;
             min = a[i];
         }
     }
-    return firsrIndexMin;
+    return firstIndexMin;
 }
 
 int negativeElementsCount(int *a, int n) {
