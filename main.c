@@ -282,9 +282,14 @@ void test() {
     test_getMaxValuePos();
 }
 
-int main() {
-    test();
+void swapRowsWithMaxAndMinValues(matrix m) {
+    position maxPos = getMaxValuePos(m);
+    position minPos = getMinValuePos(m);
+    swapRows(m, maxPos.rowIndex, minPos.rowIndex);
+}
 
+int main() {
+    //test();
 
     return 0;
 }
