@@ -370,16 +370,46 @@ bool isMutuallyInverseMatrices(matrix m1, matrix m2) {
     return isEMatrix(m3);
 }
 
+int max(int a, int b) {
+    return a > b ? a : b;
+}
+
+long long findSumOfMaxesOfPseudoDiagonal(matrix m) {
+    int sumOfSums = 0;
+    for (int upperDiagonalIndex = 1; upperDiagonalIndex < m.nCols; ++upperDiagonalIndex) {
+        int curmax = m.values[0][upperDiagonalIndex];
+        int i = 0;
+        for (int j = upperDiagonalIndex; j < m.nCols; ++j) {
+            curmax = max(curmax, m.values[i][j]);
+            i++;
+        }
+        sumOfSums += curmax;
+    }
+
+    for (int lowerDiagonalIndex = 1; lowerDiagonalIndex < m.nRows; lowerDiagonalIndex++) {
+        int curmax = m.values[lowerDiagonalIndex][0];
+        int i = 0;
+        for (int j = lowerDiagonalIndex; j < m.nRows; ++j) {
+            curmax = max(curmax, m.values[j][i]);
+            i++;
+        }
+        sumOfSums += curmax;
+    }
+
+    return sumOfSums;
+}
+
+
 int main() {
     //test();
 
-    matrix m1 = getMemMatrix(2, 2);
-    matrix m2 = getMemMatrix(2, 2);
+    matrix m1 = getMemMatrix(3, 4);
     inputMatrix(m1);
-    inputMatrix(m2);
-    printf("%d", isMutuallyInverseMatrices(m1, m2));
+
+    printf("%d", findSumOfMaxesOfPseudoDiagonal(m1));
+
     freeMemMatrix(m1);
-    freeMemMatrix(m2);
+
 
     return 0;
 }
