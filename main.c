@@ -365,13 +365,21 @@ void transposeIfMatrixHasNotEqualSumOfRows(matrix m) {
         transposeSquareMatrix(m);
 }
 
+bool isMutuallyInverseMatrices(matrix m1, matrix m2) {
+    matrix m3 = mulMatrices(m1, m2);
+    return isEMatrix(m3);
+}
+
 int main() {
     //test();
 
-    matrix m = getMemMatrix(3, 3);
-    inputMatrix(m);
-    transposeIfMatrixHasNotEqualSumOfRows(m);
-    outputMatrix(m);
+    matrix m1 = getMemMatrix(2, 2);
+    matrix m2 = getMemMatrix(2, 2);
+    inputMatrix(m1);
+    inputMatrix(m2);
+    printf("%d", isMutuallyInverseMatrices(m1, m2));
+    freeMemMatrix(m1);
+    freeMemMatrix(m2);
 
     return 0;
 }
