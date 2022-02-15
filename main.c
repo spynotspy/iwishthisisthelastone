@@ -288,8 +288,33 @@ void swapRowsWithMaxAndMinValues(matrix m) {
     swapRows(m, maxPos.rowIndex, minPos.rowIndex);
 }
 
+int getMax(int *a, int n) {
+    int firstIndexMax = 0;
+    int max = a[0];
+    for (int i = 0; i < n; ++i) {
+        if (a[i] > max) {
+            firstIndexMax = i;
+            max = a[i];
+        }
+    }
+    return max;
+}
+
+void sortRowsByMaxElement(matrix m) {
+    insertionSortRowsMatrixByRowCriteria(m, getMax);
+}
+
 int main() {
     //test();
+
+    matrix m = getMemMatrix(3, 3);
+    inputMatrix(m);
+
+    sortRowsByMaxElement(m);
+
+    outputMatrix(m);
+
+    freeMemMatrix(m);
 
     return 0;
 }
