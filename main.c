@@ -320,14 +320,36 @@ void sortColsByMinElement(matrix m) {
     insertionSortColsMatrixByColCriteria(m, getMin);
 }
 
+matrix mulMatrices(matrix m1, matrix m2) {
+    assert(m1.nCols == m2.nRows);
+    matrix m3 = getMemMatrix(m1.nRows, m2.nCols);
+    for (int i = 0; i < m1.nRows; i++)
+        for (int j = 0; j < m2.nCols; ++j) {
+            m3.values[i][j] = 0;
+            for (int k = 0; k < m1.nCols; ++k) {
+                m3.values[i][j] += m1.values[i][k] * m2.values[k][j];
+            }
+        }
+    return m3;
+}
+
+void getSquareOfMatrixIfSymmetric(matrix *m) {
+    if (isSymmetricMatrix(*m))
+        *m = mulMatrices(*m, *m);
+}
+
 int main() {
     //test();
 
-    matrix m = getMemMatrix(3, 6);
-    inputMatrix(m);
-    sortColsByMinElement(m);
-    outputMatrix(m);
-    freeMemMatrix(m);
+    matrix m1 = getMemMatrix(1, 2);
+    matrix m2 = getMemMatrix(2, 3);
+    inputMatrix(m1);
+    inputMatrix(m2);
+    matrix m3 = mulMatrices(m1, m2);
+    outputMatrix(m3);
+    freeMemMatrix(m1);
+    freeMemMatrix(m2);
+    freeMemMatrix(m3);
 
     return 0;
 }
