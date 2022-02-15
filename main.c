@@ -338,18 +338,40 @@ void getSquareOfMatrixIfSymmetric(matrix *m) {
         *m = mulMatrices(*m, *m);
 }
 
+bool isUnique(long long *a, int n) {
+    for (int i = 0; i < n; ++i) {
+        for (int j = i + 1; j < n - 1; ++j) {
+            if (a[i] == a[j])
+                return false;
+        }
+    }
+    return true;
+}
+
+long long getSum(int *a, int n) {
+    long long sum = 0;
+    for (int i = 0; i < n; ++i) {
+        sum += a[i];
+    }
+    return sum;
+}
+
+void transposeIfMatrixHasNotEqualSumOfRows(matrix m) {
+    long long sumRows[m.nRows];
+    for (int i = 0; i < m.nRows; ++i) {
+        sumRows[i] = getSum(m.values[i], m.nCols);
+    }
+    if (isUnique(sumRows, m.nRows))
+        transposeSquareMatrix(m);
+}
+
 int main() {
     //test();
 
-    matrix m1 = getMemMatrix(1, 2);
-    matrix m2 = getMemMatrix(2, 3);
-    inputMatrix(m1);
-    inputMatrix(m2);
-    matrix m3 = mulMatrices(m1, m2);
-    outputMatrix(m3);
-    freeMemMatrix(m1);
-    freeMemMatrix(m2);
-    freeMemMatrix(m3);
+    matrix m = getMemMatrix(3, 3);
+    inputMatrix(m);
+    transposeIfMatrixHasNotEqualSumOfRows(m);
+    outputMatrix(m);
 
     return 0;
 }
