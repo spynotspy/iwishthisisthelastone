@@ -8,6 +8,7 @@
 #include <stdbool.h>
 #include <stdio.h>
 #include <malloc.h>
+#include <memory.h>
 #include "../../algorithms/array/array.h"
 
 typedef struct matrix {

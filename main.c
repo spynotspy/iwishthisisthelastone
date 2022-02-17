@@ -375,28 +375,21 @@ int max(int a, int b) {
 }
 
 long long findSumOfMaxesOfPseudoDiagonal(matrix m) {
-    int sumOfSums = 0;
-    for (int upperDiagonalIndex = 1; upperDiagonalIndex < m.nCols; ++upperDiagonalIndex) {
-        int curmax = m.values[0][upperDiagonalIndex];
-        int i = 0;
-        for (int j = upperDiagonalIndex; j < m.nCols; ++j) {
-            curmax = max(curmax, m.values[i][j]);
-            i++;
-        }
-        sumOfSums += curmax;
+    int size = m.nRows + m.nCols - 1;
+    int pseudoDiagonalElements[size];
+    for (int i = 0; i < size; ++i) {
+        pseudoDiagonalElements[i] = INT_MIN;
     }
-
-    for (int lowerDiagonalIndex = 1; lowerDiagonalIndex < m.nRows; lowerDiagonalIndex++) {
-        int curmax = m.values[lowerDiagonalIndex][0];
-        int i = 0;
-        for (int j = lowerDiagonalIndex; j < m.nRows; ++j) {
-            curmax = max(curmax, m.values[j][i]);
-            i++;
+    pseudoDiagonalElements[m.nCols - m.nRows + 1] = 0; // элемент главной диагонали 0, чтобы не влиять на сумму
+    for (int i = 0; i < m.nRows; ++i) {
+        for (int j = 0; j < m.nCols; ++j) {
+            if (i != j) {
+                int k = j - i + m.nCols - m.nRows + 1;
+                pseudoDiagonalElements[k] = max(pseudoDiagonalElements[k], m.values[i][j]);
+            }
         }
-        sumOfSums += curmax;
     }
-
-    return sumOfSums;
+    return getSum(pseudoDiagonalElements, size);
 }
 
 int getMinInArea(matrix m) {
@@ -421,7 +414,7 @@ int main() {
     matrix m1 = getMemMatrix(3, 4);
     inputMatrix(m1);
 
-    printf("%d", getMinInArea(m1));
+    printf("%d", findSumOfMaxesOfPseudoDiagonal(m1));
 
     freeMemMatrix(m1);
 
