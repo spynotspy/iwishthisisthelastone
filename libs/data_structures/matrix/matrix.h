@@ -9,6 +9,7 @@
 #include <stdio.h>
 #include <malloc.h>
 #include <memory.h>
+#include <math.h>
 #include "../../algorithms/array/array.h"
 
 typedef struct matrix {
@@ -45,6 +46,9 @@ void swapColumns(matrix m, int j1, int j2);
 
 void insertionSortRowsMatrixByRowCriteria(matrix m,
                                           int (*criteria)(int *, int));
+
+void insertionSortRowsMatrixByRowCriteriaF(matrix m,
+                                           float (*criteria)(int *, int));
 
 void insertionSortColsMatrixByColCriteria(matrix m,
                                           int (*criteria)(int *, int));

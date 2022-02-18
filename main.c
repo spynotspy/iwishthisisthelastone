@@ -407,14 +407,27 @@ int getMinInArea(matrix m) {
     return min;
 }
 
+float getDistance(int *a, int n) {
+    float distance = 0;
+    for (int i = 0; i < n; ++i) {
+        distance += a[i] * a[i];
+    }
+    return sqrt(distance);
+}
+
+void sortByDistances(matrix m) {
+    insertionSortRowsMatrixByRowCriteriaF(m, getDistance);
+}
 
 int main() {
     //test();
 
-    matrix m1 = getMemMatrix(3, 4);
+    matrix m1 = getMemMatrix(3, 2);
     inputMatrix(m1);
 
-    printf("%d", findSumOfMaxesOfPseudoDiagonal(m1));
+    sortByDistances(m1);
+
+    outputMatrix(m1);
 
     freeMemMatrix(m1);
 

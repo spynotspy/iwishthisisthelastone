@@ -94,6 +94,25 @@ void insertionSortRowsMatrixByRowCriteria(matrix m,
     }
 }
 
+void insertionSortRowsMatrixByRowCriteriaF(matrix m,
+                                          float (*criteria)(int *, int)) {
+
+    float resCriteria[m.nRows];
+    for (int i = 0; i < m.nRows; ++i) {
+        resCriteria[i] = criteria(m.values[i], m.nCols);
+    }
+    for (int i = 1; i < m.nRows; i++) {
+        float t = resCriteria[i];
+        int j = i;
+        while (j > 0 && resCriteria[j - 1] > t) {
+            resCriteria[j] = resCriteria[j - 1];
+            swapRows(m, j, j - 1);
+            j--;
+        }
+        resCriteria[j] = t;
+    }
+}
+
 void insertionSortColsMatrixByColCriteria(matrix m,
                                           int (*criteria)(int *, int)) {
     int resCriteria[m.nCols];
