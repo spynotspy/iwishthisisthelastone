@@ -286,6 +286,35 @@ void test_printMatrixWithMaxZeroRows() {
     freeMemMatrices(ms, size);
 }
 
+void test_printMatrixWithMinAbsolute() {
+    int size = 5;
+    matrix *ms = createArrayOfMatrixFromArray((int[]) {-11, 0,
+                                                       0, 1,
+                                                       0, 0,
+
+                                                       1, 1,
+                                                       -2, 1,
+                                                       1, 1,
+
+                                                       0, 0,
+                                                       0, 0,
+                                                       4, -7,
+
+                                                       0, 0,
+                                                       0, 0,
+                                                       -7, 0,
+
+                                                       0, -1,
+                                                       0, -2,
+                                                       0, -2,
+
+    }, size, 3, 2);
+
+    printMatrixWithMinAbsolute(ms, size);
+
+    freeMemMatrices(ms, size);
+}
+
 void test_matrix() {
     test_swapRowsWithMaxAndMinValues();
     test_sortRowsByMaxElement();
@@ -301,5 +330,5 @@ void test_matrix() {
     test_swapPenultimateRow();
     test_countNonDescendingRowsMatrices();
     //test_printMatrixWithMaxZeroRows();
-
+    //test_printMatrixWithMinAbsolute();
 }

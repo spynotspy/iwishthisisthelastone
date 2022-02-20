@@ -503,3 +503,30 @@ void printMatrixWithMaxZeroRows(matrix *ms, int nMatrix) {
             outputMatrix(ms[i]);
     }
 }
+
+int min(int a, int b) {
+    return a < b ? a : b;
+}
+
+int getAbsoluteOfMatrix(matrix m) {
+    int standart = abs(m.values[0][0]);
+    for (int i = 0; i < m.nRows; ++i) {
+        for (int j = 0; j < m.nCols; ++j) {
+            standart = max(standart, abs(m.values[i][j]));
+        }
+    }
+    return standart;
+}
+
+void printMatrixWithMinAbsolute(matrix *ms, int nMatrix) {
+    int amountOfMatrixAbsolutes[nMatrix];
+    int minAbsolute;
+    for (int i = 0; i < nMatrix; ++i) {
+        amountOfMatrixAbsolutes[i] = getAbsoluteOfMatrix(ms[i]);
+        minAbsolute = min(minAbsolute, amountOfMatrixAbsolutes[i]);
+    }
+    for (int i = 0; i < nMatrix; ++i) {
+        if (amountOfMatrixAbsolutes[i] == minAbsolute)
+            outputMatrix(ms[i]);
+    }
+}
