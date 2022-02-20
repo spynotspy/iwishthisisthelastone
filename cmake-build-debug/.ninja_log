@@ -20,3 +20,12 @@
 196	445	6670710672621673	5b.exe	c77320d5320bd773
 4	628	6670710723782732	CMakeFiles/5b.dir/libs/data_structures/matrix/test_matrix.c.obj	f2d4d845443c619c
 628	877	6670710726314269	5b.exe	c77320d5320bd773
+35	265	6670732942927262	CMakeFiles/5b.dir/libs/data_structures/matrix/test_matrix.c.obj	f2d4d845443c619c
+45	266	6670732942962875	CMakeFiles/5b.dir/libs/data_structures/matrix/test_matrix_functions.c.obj	4837bbcad9df228
+7	267	6670732942927262	CMakeFiles/5b.dir/main.c.obj	cc48553c73ec56f5
+40	359	6670732943974499	CMakeFiles/5b.dir/libs/data_structures/matrix/matrix.c.obj	88e3f163bd3aa548
+359	551	6670732945845786	5b.exe	c77320d5320bd773
+4	126	6670733083069284	CMakeFiles/5b.dir/libs/data_structures/matrix/test_matrix.c.obj	f2d4d845443c619c
+127	250	6670733084150954	5b.exe	c77320d5320bd773
+2	133	6670733793790641	CMakeFiles/5b.dir/libs/data_structures/matrix/test_matrix.c.obj	f2d4d845443c619c
+133	255	6670733794845223	5b.exe	c77320d5320bd773

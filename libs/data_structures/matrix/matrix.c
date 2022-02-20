@@ -95,7 +95,7 @@ void insertionSortRowsMatrixByRowCriteria(matrix m,
 }
 
 void insertionSortRowsMatrixByRowCriteriaF(matrix m,
-                                          float (*criteria)(int *, int)) {
+                                           float (*criteria)(int *, int)) {
 
     float resCriteria[m.nRows];
     for (int i = 0; i < m.nRows; ++i) {
@@ -448,7 +448,7 @@ void swapPenultimateRow(matrix m) {
 
 }
 
-bool isNonDescendingSorted(int *a, int n){
+bool isNonDescendingSorted(int *a, int n) {
     for (int i = 1; i < n; ++i) {
         if (a[i] < a[i - 1])
             return false;
@@ -456,19 +456,50 @@ bool isNonDescendingSorted(int *a, int n){
     return true;
 }
 
-bool hasAllNonDescendingRows(matrix m){
+bool hasAllNonDescendingRows(matrix m) {
     for (int i = 0; i < m.nRows; ++i) {
-        if (isNonDescendingSorted(m.values[i],m.nCols) == false)
+        if (isNonDescendingSorted(m.values[i], m.nCols) == false)
             return false;
     }
     return true;
 }
 
-int countNonDescendingRowsMatrices(matrix *ms, int nMatrix){
+int countNonDescendingRowsMatrices(matrix *ms, int nMatrix) {
     int count = 0;
     for (int i = 0; i < nMatrix; ++i) {
         if (hasAllNonDescendingRows(ms[i]) == true)
             count++;
     }
     return count;
+}
+
+int countValues(const int *a, int n, int value) {
+    int count = 0;
+    for (int i = 0; i < n; ++i) {
+        if (a[i] == value)
+            count++;
+    }
+    return count;
+}
+
+int countZeroRows(matrix m) {
+    int count = 0;
+    for (int i = 0; i < m.nRows; ++i) {
+        if (countValues(m.values[i], m.nCols, 0) == m.nCols)
+            count++;
+    }
+    return count;
+}
+
+void printMatrixWithMaxZeroRows(matrix *ms, int nMatrix) {
+    int amountZeroRowsMatrix[nMatrix];
+    int maxZeroRowsCount = INT_MIN;
+    for (int i = 0; i < nMatrix; ++i) {
+        amountZeroRowsMatrix[i] = countZeroRows(ms[i]);
+        maxZeroRowsCount = max(amountZeroRowsMatrix[i], maxZeroRowsCount);
+    }
+    for (int i = 0; i < nMatrix; ++i) {
+        if (amountZeroRowsMatrix[i] == maxZeroRowsCount)
+            outputMatrix(ms[i]);
+    }
 }
