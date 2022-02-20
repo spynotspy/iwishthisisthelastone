@@ -444,22 +444,22 @@ int countNUnique(long long *a, int n) {
     return count;
 }
 
-int countEqClassesByRowsSum(matrix m){
+int countEqClassesByRowsSum(matrix m) {
     long long sumOfRows[m.nRows];
     for (int i = 0; i < m.nRows; ++i) {
         sumOfRows[i] = getSum(m.values[i], m.nCols);
     }
-    return countNUnique(sumOfRows,m.nRows);
+    return countNUnique(sumOfRows, m.nRows);
 }
 
-int getNSpecialElement(matrix m){
+int getNSpecialElement(matrix m) {
     int countSpecial = 0;
     for (int i = 0; i < m.nCols; ++i) {
         int sumOfCols = 0;
         int maxElemInColumn = INT_MIN;
         for (int j = 0; j < m.nRows; ++j) {
             sumOfCols += m.values[j][i];
-            maxElemInColumn = max(maxElemInColumn,m.values[j][i]);
+            maxElemInColumn = max(maxElemInColumn, m.values[j][i]);
         }
         if (sumOfCols - maxElemInColumn < maxElemInColumn)
             countSpecial++;
@@ -467,15 +467,45 @@ int getNSpecialElement(matrix m){
     return countSpecial;
 }
 
+position getLeftMin(matrix m) {
+    position curMinPos = {0, 0};
+    int curMin = m.values[0][0];
+    for (int i = 0; i < m.nCols; ++i) {
+        for (int j = 0; j < m.nRows; ++j) {
+            if (m.values[j][i] < curMin) {
+                curMin = m.values[j][i];
+                curMinPos.rowIndex = j;
+                curMinPos.colIndex = i;
+            }
+        }
+    }
+    return curMinPos;
+}
+
+
+void swapPenultimateRow(matrix m) {
+    position minElemPos = getLeftMin(m);
+
+    int minColElems[m.nRows];
+    for (int i = 0; i < m.nRows; ++i)
+        minColElems[i] = m.values[i][minElemPos.colIndex];
+
+    for (int i = 0; i < m.nRows; ++i)
+        m.values[m.nRows - 2][i] = minColElems[i];
+
+}
+
 int main() {
     //test();
 
-    matrix m1 = getMemMatrix(3, 4);
+    matrix m1 = getMemMatrix(3, 3);
     inputMatrix(m1);
 
-    printf("%lld", getNSpecialElement(m1));
+    //printf("%lld", getNSpecialElement(m1));
 
-   // outputMatrix(m1);
+    swapPenultimateRow(m1);
+
+    outputMatrix(m1);
 
     freeMemMatrix(m1);
 
