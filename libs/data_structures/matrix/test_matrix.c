@@ -237,6 +237,26 @@ void test_swapPenultimateRow() {
     freeMemMatrix(m);
 }
 
+void test_countNonDescendingRowsMatrices() {
+    int size = 4;
+    matrix *ms = createArrayOfMatrixFromArray((int[]) {7, 1,
+                                                       1, 1,
+
+                                                       1, 6,
+                                                       2, 2,
+
+                                                       5, 4,
+                                                       2, 3,
+
+                                                       1, 3,
+                                                       7, 9,
+    }, size, 2, 2);
+
+    assert(countNonDescendingRowsMatrices(ms, size) == 2);
+
+    freeMemMatrices(ms, size);
+}
+
 void test_matrix() {
     test_swapRowsWithMaxAndMinValues();
     test_sortRowsByMaxElement();
@@ -250,5 +270,6 @@ void test_matrix() {
     test_countEqClassesByRowsSum();
     test_getNSpecialElement();
     test_swapPenultimateRow();
+    test_countNonDescendingRowsMatrices();
 
 }

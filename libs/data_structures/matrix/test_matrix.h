@@ -32,6 +32,8 @@ void test_getNSpecialElement();
 
 void test_swapPenultimateRow();
 
+void test_countNonDescendingRowsMatrices();
+
 void test_matrix();
 
 #endif //MAIN_C_TEST_MATRIX_H

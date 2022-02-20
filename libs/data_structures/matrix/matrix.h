@@ -117,4 +117,6 @@ position getLeftMin(matrix m);
 
 void swapPenultimateRow(matrix m);
 
+int countNonDescendingRowsMatrices(matrix *ms, int nMatrix);
+
 #endif //MAIN_C_MATRIX_H
