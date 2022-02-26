@@ -3,7 +3,6 @@
 //
 #include "test_matrix_functions.h"
 
-
 void test_getMemMatrix() {
     matrix m = getMemMatrix(2, 3);
     assert(m.values != NULL && m.nRows == 2 && m.nCols == 3);
