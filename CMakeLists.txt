@@ -10,5 +10,5 @@ add_executable(5b main.c libs/algorithms/array/array.h libs/algorithms/array/arr
         libs/data_structures/matrix/matrix.h libs/data_structures/matrix/matrix.c
         libs/data_structures/matrix/test_matrix.h libs/data_structures/matrix/test_matrix.c
         libs/data_structures/matrix/test_matrix_functions.h libs/data_structures/matrix/test_matrix_functions.c
-        libs/algorithms/string/string_.h libs/algorithms/string/string_.c)
+        libs/algorithms/string/string_.h libs/algorithms/string/string_.c libs/algorithms/string/tasks/tasks.h libs/algorithms/string/tasks/tasks.c)
 

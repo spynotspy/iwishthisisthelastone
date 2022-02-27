@@ -1,6 +1,6 @@
 #include <assert.h>
 #include "libs/algorithms/string/string_.h"
-
+#include "libs/algorithms/string/tasks/tasks.h"
 
 void test_findNonSpace() {
     char c[] = "  w a r";
@@ -97,8 +97,20 @@ void test_string() {
     test_copyIfReverse();
 }
 
+void test_removeNonLetters() {
+    char s[] = " p e p s i ";
+    removeNonLetters(s);
+    assert(s[0] == 'p' && s[1] == 'e' && s[2] == 'p' && s[3] == 's' && s[4] == 'i' && s[5] == '\0');
+}
+
+void test_tasks() {
+    test_removeNonLetters();
+}
+
 int main() {
-    test_string();
+    //test_string();
+    test_tasks();
+
 
     return 0;
 }
