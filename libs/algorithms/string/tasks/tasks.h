@@ -9,4 +9,6 @@
 
 void removeNonLetters(char *s);
 
+void removeAdjacentEqualLetters(char *s);
+
 #endif //MAIN_C_TASKS_H

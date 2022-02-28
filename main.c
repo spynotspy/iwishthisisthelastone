@@ -2,6 +2,22 @@
 #include "libs/algorithms/string/string_.h"
 #include "libs/algorithms/string/tasks/tasks.h"
 
+# define ASSERT_STRING(expected, got) assertString ( expected , got , \
+ __FILE__ , __FUNCTION__ , __LINE__ )
+
+void assertString(const char *expected, char *got,
+                  char const *fileName, char const *funcName,
+                  int line) {
+    if (strcmp(expected, got)) {
+        fprintf(stderr, " File %s\n", fileName);
+        fprintf(stderr, "%s - failed on line %d\n", funcName, line);
+        fprintf(stderr, " Expected : \"%s \"\n", expected);
+        fprintf(stderr, "Got: \"%s\"\n\n", got);
+    } else
+        fprintf(stderr, "%s - OK\n", funcName);
+}
+
+
 void test_findNonSpace() {
     char c[] = "  w a r";
     char *res = findNonSpace(c);
@@ -98,13 +114,24 @@ void test_string() {
 }
 
 void test_removeNonLetters() {
-    char s[] = " p e p s i ";
-    removeNonLetters(s);
-    assert(s[0] == 'p' && s[1] == 'e' && s[2] == 'p' && s[3] == 's' && s[4] == 'i' && s[5] == '\0');
+    char source[] = " p e p s i ";
+    char expected[] = "pepsi";
+    removeNonLetters(source);
+
+    ASSERT_STRING(expected, source);
+}
+
+void test_removeAdjacentEqualLetters(){
+    char source[] = "change  the  world...my  final  message...goodbye..";
+    char expected[] = "change the world.my final mesage.godbye.";
+    removeAdjacentEqualLetters(source);
+
+    ASSERT_STRING(expected, source);
 }
 
 void test_tasks() {
     test_removeNonLetters();
+    test_removeAdjacentEqualLetters();
 }
 
 int main() {
