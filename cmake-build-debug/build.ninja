@@ -41,91 +41,37 @@ include CMakeFiles/rules.ninja
 
 cmake_ninja_workdir = C$:/Users/Dima/CLionProjects/5b/cmake-build-debug/
 # =============================================================================
-# Object build statements for EXECUTABLE target 5b
+# Object build statements for EXECUTABLE target project
 
 
 #############################################
-# Order-only phony target for 5b
+# Order-only phony target for project
 
-build cmake_object_order_depends_target_5b: phony || CMakeFiles/5b.dir
+build cmake_object_order_depends_target_project: phony || cmake_object_order_depends_target_str
 
-build CMakeFiles/5b.dir/main.c.obj: C_COMPILER__5b_Debug C$:/Users/Dima/CLionProjects/5b/main.c || cmake_object_order_depends_target_5b
-  DEP_FILE = CMakeFiles\5b.dir\main.c.obj.d
+build CMakeFiles/project.dir/main.c.obj: C_COMPILER__project_Debug C$:/Users/Dima/CLionProjects/5b/main.c || cmake_object_order_depends_target_project
+  DEP_FILE = CMakeFiles\project.dir\main.c.obj.d
   FLAGS = -g -std=gnu11
-  OBJECT_DIR = CMakeFiles\5b.dir
-  OBJECT_FILE_DIR = CMakeFiles\5b.dir
-
-build CMakeFiles/5b.dir/libs/algorithms/array/array.c.obj: C_COMPILER__5b_Debug C$:/Users/Dima/CLionProjects/5b/libs/algorithms/array/array.c || cmake_object_order_depends_target_5b
-  DEP_FILE = CMakeFiles\5b.dir\libs\algorithms\array\array.c.obj.d
-  FLAGS = -g -std=gnu11
-  OBJECT_DIR = CMakeFiles\5b.dir
-  OBJECT_FILE_DIR = CMakeFiles\5b.dir\libs\algorithms\array
-
-build CMakeFiles/5b.dir/libs/algorithms/algorithm.c.obj: C_COMPILER__5b_Debug C$:/Users/Dima/CLionProjects/5b/libs/algorithms/algorithm.c || cmake_object_order_depends_target_5b
-  DEP_FILE = CMakeFiles\5b.dir\libs\algorithms\algorithm.c.obj.d
-  FLAGS = -g -std=gnu11
-  OBJECT_DIR = CMakeFiles\5b.dir
-  OBJECT_FILE_DIR = CMakeFiles\5b.dir\libs\algorithms
-
-build CMakeFiles/5b.dir/libs/data_structures/vector/vector.c.obj: C_COMPILER__5b_Debug C$:/Users/Dima/CLionProjects/5b/libs/data_structures/vector/vector.c || cmake_object_order_depends_target_5b
-  DEP_FILE = CMakeFiles\5b.dir\libs\data_structures\vector\vector.c.obj.d
-  FLAGS = -g -std=gnu11
-  OBJECT_DIR = CMakeFiles\5b.dir
-  OBJECT_FILE_DIR = CMakeFiles\5b.dir\libs\data_structures\vector
-
-build CMakeFiles/5b.dir/libs/data_structures/vector/vectorVoid.c.obj: C_COMPILER__5b_Debug C$:/Users/Dima/CLionProjects/5b/libs/data_structures/vector/vectorVoid.c || cmake_object_order_depends_target_5b
-  DEP_FILE = CMakeFiles\5b.dir\libs\data_structures\vector\vectorVoid.c.obj.d
-  FLAGS = -g -std=gnu11
-  OBJECT_DIR = CMakeFiles\5b.dir
-  OBJECT_FILE_DIR = CMakeFiles\5b.dir\libs\data_structures\vector
-
-build CMakeFiles/5b.dir/libs/data_structures/matrix/matrix.c.obj: C_COMPILER__5b_Debug C$:/Users/Dima/CLionProjects/5b/libs/data_structures/matrix/matrix.c || cmake_object_order_depends_target_5b
-  DEP_FILE = CMakeFiles\5b.dir\libs\data_structures\matrix\matrix.c.obj.d
-  FLAGS = -g -std=gnu11
-  OBJECT_DIR = CMakeFiles\5b.dir
-  OBJECT_FILE_DIR = CMakeFiles\5b.dir\libs\data_structures\matrix
-
-build CMakeFiles/5b.dir/libs/data_structures/matrix/test_matrix.c.obj: C_COMPILER__5b_Debug C$:/Users/Dima/CLionProjects/5b/libs/data_structures/matrix/test_matrix.c || cmake_object_order_depends_target_5b
-  DEP_FILE = CMakeFiles\5b.dir\libs\data_structures\matrix\test_matrix.c.obj.d
-  FLAGS = -g -std=gnu11
-  OBJECT_DIR = CMakeFiles\5b.dir
-  OBJECT_FILE_DIR = CMakeFiles\5b.dir\libs\data_structures\matrix
-
-build CMakeFiles/5b.dir/libs/data_structures/matrix/test_matrix_functions.c.obj: C_COMPILER__5b_Debug C$:/Users/Dima/CLionProjects/5b/libs/data_structures/matrix/test_matrix_functions.c || cmake_object_order_depends_target_5b
-  DEP_FILE = CMakeFiles\5b.dir\libs\data_structures\matrix\test_matrix_functions.c.obj.d
-  FLAGS = -g -std=gnu11
-  OBJECT_DIR = CMakeFiles\5b.dir
-  OBJECT_FILE_DIR = CMakeFiles\5b.dir\libs\data_structures\matrix
-
-build CMakeFiles/5b.dir/libs/algorithms/string/string_.c.obj: C_COMPILER__5b_Debug C$:/Users/Dima/CLionProjects/5b/libs/algorithms/string/string_.c || cmake_object_order_depends_target_5b
-  DEP_FILE = CMakeFiles\5b.dir\libs\algorithms\string\string_.c.obj.d
-  FLAGS = -g -std=gnu11
-  OBJECT_DIR = CMakeFiles\5b.dir
-  OBJECT_FILE_DIR = CMakeFiles\5b.dir\libs\algorithms\string
-
-build CMakeFiles/5b.dir/libs/algorithms/string/tasks/tasks.c.obj: C_COMPILER__5b_Debug C$:/Users/Dima/CLionProjects/5b/libs/algorithms/string/tasks/tasks.c || cmake_object_order_depends_target_5b
-  DEP_FILE = CMakeFiles\5b.dir\libs\algorithms\string\tasks\tasks.c.obj.d
-  FLAGS = -g -std=gnu11
-  OBJECT_DIR = CMakeFiles\5b.dir
-  OBJECT_FILE_DIR = CMakeFiles\5b.dir\libs\algorithms\string\tasks
+  OBJECT_DIR = CMakeFiles\project.dir
+  OBJECT_FILE_DIR = CMakeFiles\project.dir
 
 
 # =============================================================================
-# Link build statements for EXECUTABLE target 5b
+# Link build statements for EXECUTABLE target project
 
 
 #############################################
-# Link the executable 5b.exe
+# Link the executable project.exe
 
-build 5b.exe: C_EXECUTABLE_LINKER__5b_Debug CMakeFiles/5b.dir/main.c.obj CMakeFiles/5b.dir/libs/algorithms/array/array.c.obj CMakeFiles/5b.dir/libs/algorithms/algorithm.c.obj CMakeFiles/5b.dir/libs/data_structures/vector/vector.c.obj CMakeFiles/5b.dir/libs/data_structures/vector/vectorVoid.c.obj CMakeFiles/5b.dir/libs/data_structures/matrix/matrix.c.obj CMakeFiles/5b.dir/libs/data_structures/matrix/test_matrix.c.obj CMakeFiles/5b.dir/libs/data_structures/matrix/test_matrix_functions.c.obj CMakeFiles/5b.dir/libs/algorithms/string/string_.c.obj CMakeFiles/5b.dir/libs/algorithms/string/tasks/tasks.c.obj
+build project.exe: C_EXECUTABLE_LINKER__project_Debug CMakeFiles/project.dir/main.c.obj | libstr.a || libstr.a
   FLAGS = -g
-  LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
-  OBJECT_DIR = CMakeFiles\5b.dir
+  LINK_LIBRARIES = libstr.a  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
+  OBJECT_DIR = CMakeFiles\project.dir
   POST_BUILD = cd .
   PRE_LINK = cd .
-  TARGET_FILE = 5b.exe
-  TARGET_IMPLIB = lib5b.dll.a
-  TARGET_PDB = 5b.exe.dbg
+  TARGET_FILE = project.exe
+  TARGET_IMPLIB = libproject.dll.a
+  TARGET_PDB = project.exe.dbg
 
 
 #############################################
@@ -137,6 +83,37 @@ build CMakeFiles/edit_cache.util: CUSTOM_COMMAND
   restat = 1
 
 build edit_cache: phony CMakeFiles/edit_cache.util
+
+# =============================================================================
+# Object build statements for STATIC_LIBRARY target str
+
+
+#############################################
+# Order-only phony target for str
+
+build cmake_object_order_depends_target_str: phony || CMakeFiles/str.dir
+
+build CMakeFiles/str.dir/libs/algorithms/string/string_.c.obj: C_COMPILER__str_Debug C$:/Users/Dima/CLionProjects/5b/libs/algorithms/string/string_.c || cmake_object_order_depends_target_str
+  DEP_FILE = CMakeFiles\str.dir\libs\algorithms\string\string_.c.obj.d
+  FLAGS = -g -std=gnu11
+  OBJECT_DIR = CMakeFiles\str.dir
+  OBJECT_FILE_DIR = CMakeFiles\str.dir\libs\algorithms\string
+
+
+# =============================================================================
+# Link build statements for STATIC_LIBRARY target str
+
+
+#############################################
+# Link the static library libstr.a
+
+build libstr.a: C_STATIC_LIBRARY_LINKER__str_Debug CMakeFiles/str.dir/libs/algorithms/string/string_.c.obj
+  LANGUAGE_COMPILE_FLAGS = -g
+  OBJECT_DIR = CMakeFiles\str.dir
+  POST_BUILD = cd .
+  PRE_LINK = cd .
+  TARGET_FILE = libstr.a
+  TARGET_PDB = str.a.dbg
 
 
 #############################################
@@ -153,7 +130,9 @@ build rebuild_cache: phony CMakeFiles/rebuild_cache.util
 # =============================================================================
 # Target aliases.
 
-build 5b: phony 5b.exe
+build project: phony project.exe
+
+build str: phony libstr.a
 
 # =============================================================================
 # Folder targets.
@@ -163,7 +142,7 @@ build 5b: phony 5b.exe
 #############################################
 # Folder: C:/Users/Dima/CLionProjects/5b/cmake-build-debug
 
-build all: phony 5b.exe
+build all: phony project.exe libstr.a
 
 # =============================================================================
 # Built-in targets

@@ -75,6 +75,15 @@ char *copyIf(char *beginSource, const char *endSource,
     return beginDestination;
 }
 
+char *copyReverse(char *rbeginSource, const char *rendSource, char *beginDestination) {
+    while (rbeginSource != rendSource) {
+        *beginDestination = *rbeginSource;
+        beginDestination++;
+        rbeginSource--;
+    }
+    return beginDestination;
+}
+
 char *copyIfReverse(char *rbeginSource, const char *rendSource,
                     char *beginDestination, int (*f)(int)) {
     while (rbeginSource != rendSource) {
@@ -85,4 +94,30 @@ char *copyIfReverse(char *rbeginSource, const char *rendSource,
         rbeginSource--;
     }
     return beginDestination;
+}
+
+char *getEndOfString(char *s) {
+    while (*s != '\0')
+        s++;
+    return s;
+}
+
+bool getWord(char *beginSearch, WordDescriptor *word) {
+    word->begin = findNonSpace(beginSearch);
+    if (*word->begin == '\0')
+        return false;
+
+    word->end = findSpace(word->begin);
+
+    return true;
+}
+
+bool getWordReverse(char *rbegin, char *rend, WordDescriptor *word) {
+    word->begin = findNonSpaceReverse(rbegin, rend);
+    if (word->begin == rend)
+        return false;
+
+    word->end = findSpaceReverse(word->begin, rend);
+
+    return true;
 }

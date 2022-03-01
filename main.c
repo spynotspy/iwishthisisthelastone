@@ -1,6 +1,8 @@
 #include <assert.h>
-#include "libs/algorithms/string/string_.h"
-#include "libs/algorithms/string/tasks/tasks.h"
+#include "libs/algorithms/string/tasks/everyWordReversed.h"
+#include "libs/algorithms/string/tasks/removeNonLetters.h"
+#include "libs/algorithms/string/tasks/removeAdjacentEqualLetters.h"
+#include "libs/algorithms/string/tasks/reversedNumbersInBeginOfWordAndNormalLettersInEndOfWord.h"
 
 # define ASSERT_STRING(expected, got) assertString ( expected , got , \
  __FILE__ , __FUNCTION__ , __LINE__ )
@@ -87,11 +89,10 @@ bool isNumber(char letter) {
 }
 
 void test_copyIf() {
-    char c1[] = "hehe haha";
-    char c2[10] = "1234";
+    char c1[] = "";
+    char c2[10] = "";
     char *cc = copyIf(c1, &c1[9], c2 + 4, isspace);
-    assert(c2[4] == ' ');
-    assert(cc == &c2[5]);
+    ASSERT_STRING(c1, c2);
 }
 
 void test_copyIfReverse() {
@@ -114,17 +115,35 @@ void test_string() {
 }
 
 void test_removeNonLetters() {
-    char source[] = " p e p s i ";
-    char expected[] = "pepsi";
+    char source[] = "";
+    char expected[] = "";
     removeNonLetters(source);
 
     ASSERT_STRING(expected, source);
 }
 
-void test_removeAdjacentEqualLetters(){
-    char source[] = "change  the  world...my  final  message...goodbye..";
-    char expected[] = "change the world.my final mesage.godbye.";
+void test_removeAdjacentEqualLetters() {
+    char source[] = "";
+    char expected[] = "";
     removeAdjacentEqualLetters(source);
+
+    ASSERT_STRING(expected, source);
+}
+
+void test_reversedNumbersInBeginOfWordAndNormalLettersInEndOfWord() {
+    char source[] = "3a2bc1 hhh123";
+    char expected[] = "123abc 321hhh";
+
+    reversedNumbersInBeginOfWordAndNormalLettersInEndOfWord(source);
+
+    ASSERT_STRING(expected, source);
+}
+
+void test_everyWordReversed() {
+    char source[] = "z ytrewq    123";
+    char expected[] = "z qwerty    321";
+
+    everyWordReversed(source);
 
     ASSERT_STRING(expected, source);
 }
@@ -132,6 +151,8 @@ void test_removeAdjacentEqualLetters(){
 void test_tasks() {
     test_removeNonLetters();
     test_removeAdjacentEqualLetters();
+    test_reversedNumbersInBeginOfWordAndNormalLettersInEndOfWord();
+    test_everyWordReversed();
 }
 
 int main() {

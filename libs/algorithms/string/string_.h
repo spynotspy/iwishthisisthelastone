@@ -5,10 +5,22 @@
 #ifndef MAIN_C_STRING__H
 #define MAIN_C_STRING__H
 
+
 #include <stdio.h>
 #include <ctype.h>
 #include <memory.h>
 #include <stdbool.h>
+
+# define MAX_STRING_SIZE 100
+# define MAX_N_WORDS_IN_STRING 100
+# define MAX_WORD_SIZE 20
+static char stringBuffer_[MAX_STRING_SIZE + 1];
+
+typedef struct WordDescriptor {
+    char *begin; // позиция начала слова
+    char *end; // позиция первого символа, после последнего символа слова
+} WordDescriptor;
+
 
 size_t strlen_(const char *begin);
 
@@ -30,7 +42,15 @@ char *copy(const char *beginSource, const char *endSource,
 char *copyIf(char *beginSource, const char *endSource,
              char *beginDestination, int (*f)(int));
 
+char *copyReverse(char *rbeginSource, const char *rendSource, char *beginDestination);
+
 char *copyIfReverse(char *rbeginSource, const char *rendSource,
                     char *beginDestination, int (*f)(int));
+
+char *getEndOfString(char *s);
+
+bool getWord(char *beginSearch, WordDescriptor *word);
+
+bool getWordReverse(char *rbegin, char *rend, WordDescriptor *word);
 
 #endif //MAIN_C_STRING__H
