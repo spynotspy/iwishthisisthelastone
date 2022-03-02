@@ -47,10 +47,10 @@ char *findSpaceReverse(char *rbegin, const char *rend) {
 }
 
 int strcmp(const char *lhs, const char *rhs) {
-    while (*lhs != '\0' && *rhs != '\0' && *lhs == *rhs)
+    while (*lhs != '\0' && *lhs == *rhs)
         lhs++, rhs++;
 
-    return (*lhs > *rhs) - (*lhs < *rhs);
+    return *lhs - *rhs;
 }
 
 char *copy(const char *beginSource, const char *endSource,

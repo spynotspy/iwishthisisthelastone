@@ -8,18 +8,18 @@
 #include "../string_.h"
 
 void removeAdjacentEqualLetters(char *s) {
-    char *beginSource = s;
-    int mover = 0;
-    while (*s != '\0') {
-        if (*s != *(s + 1)) {
-            *(beginSource + mover) = *s;
-            mover++;
+    char symbol = *s;
+    char *newStringEnd = s + 1;
+    char *search = newStringEnd;
+    while (*search != '\0') {
+        if (symbol != *search) {
+            *newStringEnd = *search;
+            symbol = *search;
+            newStringEnd++;
         }
-        s++;
+        search++;
     }
-
-    s = beginSource;
-    *(s + mover) = '\0';
+    *newStringEnd = '\0';
 }
 
 #endif //MAIN_C_REMOVEADJACENTEQUALLETTERS_H

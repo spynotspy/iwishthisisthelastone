@@ -288,8 +288,13 @@ matrix mulMatrices(matrix m1, matrix m2) {
 }
 
 void getSquareOfMatrixIfSymmetric(matrix *m) {
-    if (isSymmetricMatrix(*m))
-        *m = mulMatrices(*m, *m);
+
+    if (isSymmetricMatrix(*m)) {
+        matrix t = getMemMatrix(m->nRows, m->nCols);
+        t = mulMatrices(*m, *m);
+        freeMemMatrix(*m);
+        *m = t;
+    }
 }
 
 bool isUnique(long long *a, int n) {
@@ -321,7 +326,9 @@ void transposeIfMatrixHasNotEqualSumOfRows(matrix m) {
 
 bool isMutuallyInverseMatrices(matrix m1, matrix m2) {
     matrix m3 = mulMatrices(m1, m2);
-    return isEMatrix(m3);
+    bool isEmatrix = isEMatrix(m3);
+    freeMemMatrix(m3);
+    return isEmatrix;
 }
 
 int max(int a, int b) {

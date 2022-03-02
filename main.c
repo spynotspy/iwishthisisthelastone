@@ -3,6 +3,7 @@
 #include "libs/algorithms/string/tasks/removeNonLetters.h"
 #include "libs/algorithms/string/tasks/removeAdjacentEqualLetters.h"
 #include "libs/algorithms/string/tasks/reversedNumbersInBeginOfWordAndNormalLettersInEndOfWord.h"
+#include "libs/algorithms/string/tasks/changeNumbersToSpaces.h"
 
 # define ASSERT_STRING(expected, got) assertString ( expected , got , \
  __FILE__ , __FUNCTION__ , __LINE__ )
@@ -123,8 +124,8 @@ void test_removeNonLetters() {
 }
 
 void test_removeAdjacentEqualLetters() {
-    char source[] = "";
-    char expected[] = "";
+    char source[] = "aaabbbccc";
+    char expected[] = "abc";
     removeAdjacentEqualLetters(source);
 
     ASSERT_STRING(expected, source);
@@ -140,10 +141,19 @@ void test_reversedNumbersInBeginOfWordAndNormalLettersInEndOfWord() {
 }
 
 void test_everyWordReversed() {
-    char source[] = "z ytrewq    123";
-    char expected[] = "z qwerty    321";
+    char source[] = "cba 321abc   pipipupu";
+    char expected[] ="abc cba123   upupipip";
 
     everyWordReversed(source);
+
+    ASSERT_STRING(expected, source);
+}
+
+void test_changeNumbersToSpaces() {
+    char source[] = "a1b2c3";
+    char expected[MAX_STRING_SIZE] = "a b  c   ";
+
+    changeNumbersToSpaces(source);
 
     ASSERT_STRING(expected, source);
 }
@@ -153,6 +163,7 @@ void test_tasks() {
     test_removeAdjacentEqualLetters();
     test_reversedNumbersInBeginOfWordAndNormalLettersInEndOfWord();
     test_everyWordReversed();
+    //test_changeNumbersToSpaces();
 }
 
 int main() {
