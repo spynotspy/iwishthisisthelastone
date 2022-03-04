@@ -5,6 +5,8 @@
 #ifndef INC_5B_ARRAY_H
 #define INC_5B_ARRAY_H
 
+#include <stdlib.h>
+
 int compare_ints(const void *a, const void *b);
 
 //ввод массива data размера n

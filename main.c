@@ -150,8 +150,8 @@ void test_everyWordReversed() {
 }
 
 void test_changeNumbersToSpaces() {
-    char source[] = "a1b2c3";
-    char expected[MAX_STRING_SIZE] = "a b  c   ";
+    char source[] = "1_00000ccc_1";
+    char expected[MAX_STRING_SIZE] = " _ccc_ ";
 
     changeNumbersToSpaces(source);
 
@@ -163,7 +163,7 @@ void test_tasks() {
     test_removeAdjacentEqualLetters();
     test_reversedNumbersInBeginOfWordAndNormalLettersInEndOfWord();
     test_everyWordReversed();
-    //test_changeNumbersToSpaces();
+    test_changeNumbersToSpaces();
 }
 
 int main() {

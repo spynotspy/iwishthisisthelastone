@@ -7,19 +7,32 @@
 
 #include "../string_.h"
 
-char *makeSpaces(char *begin, int amountSpaces) {
+#define CHAR_ZERO 48
+
+void makeSpaces(char **begin, int amountSpaces) {
     for (int i = 0; i < amountSpaces; ++i) {
-        *begin = ' ';
-        begin++;
+        **begin = ' ';
+        (*begin)++;
     }
-    return begin;
 }
 
 void changeNumbersToSpaces(char *s) {
-    char *endString = getEndOfString(s);
-    char *readPtr = copy(s, endString, stringBuffer_);
+    char *recPtr = s;
+    char *readPtr = stringBuffer_;
+    copy(s, getEndOfString(s) + 1, stringBuffer_);
 
+    while (*readPtr != '\0') {
+        if (isdigit(*readPtr)) {
+            makeSpaces(&recPtr, *readPtr - CHAR_ZERO);
+        } else {
+            *recPtr = *readPtr;
+            recPtr++;
+        }
+        readPtr++;
+    }
 
+    *recPtr = '\0';
 }
+
 
 #endif //MAIN_C_CHANGENUMBERSTOSPACES_H

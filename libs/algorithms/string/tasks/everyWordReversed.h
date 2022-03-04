@@ -21,7 +21,6 @@ void swapChar(char *a, char *b) {
     *b = t;
 }
 
-//  wb_ _ _ _ _ _ we
 
 void reverseWord_v2(WordDescriptor word) {
     char *beginReversedWord = word.begin;
