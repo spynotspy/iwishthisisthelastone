@@ -4,6 +4,8 @@
 #include "libs/algorithms/string/tasks/removeAdjacentEqualLetters.h"
 #include "libs/algorithms/string/tasks/reversedNumbersInBeginOfWordAndNormalLettersInEndOfWord.h"
 #include "libs/algorithms/string/tasks/changeNumbersToSpaces.h"
+#include "libs/algorithms/string/tasks/changeW1ToW2.h"
+#include "libs/algorithms/string/tasks/areWordsOrdered.h"
 
 # define ASSERT_STRING(expected, got) assertString ( expected , got , \
  __FILE__ , __FUNCTION__ , __LINE__ )
@@ -142,7 +144,7 @@ void test_reversedNumbersInBeginOfWordAndNormalLettersInEndOfWord() {
 
 void test_everyWordReversed() {
     char source[] = "cba 321abc   pipipupu";
-    char expected[] ="abc cba123   upupipip";
+    char expected[] = "abc cba123   upupipip";
 
     everyWordReversed(source);
 
@@ -158,12 +160,42 @@ void test_changeNumbersToSpaces() {
     ASSERT_STRING(expected, source);
 }
 
+void test_changeW1toW2() {
+    char source[] = "dima dimadima didi";
+    char w1[] = "dima";
+    char w2[] = "nasty";
+    char expected[] = "nasty dimadima didi";
+
+    replace(source, w1, w2);
+
+    ASSERT_STRING(expected, source);
+}
+
+void test_areWordsOrdered_true() {
+    char source[] = "alpha aw beta centre six";
+
+    assert(areWordsOrdered(source) == 1);
+}
+
+void test_areWordsOrdered_false() {
+    char source[] = "sleep alpha beta centre six";
+
+    assert(areWordsOrdered(source) == 0);
+}
+
+void test_areWordsOrdered() {
+    test_areWordsOrdered_true();
+    test_areWordsOrdered_false();
+}
+
 void test_tasks() {
     test_removeNonLetters();
     test_removeAdjacentEqualLetters();
     test_reversedNumbersInBeginOfWordAndNormalLettersInEndOfWord();
     test_everyWordReversed();
     test_changeNumbersToSpaces();
+    //test_changeW1toW2();
+    test_areWordsOrdered();
 }
 
 int main() {
