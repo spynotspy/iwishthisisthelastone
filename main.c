@@ -6,6 +6,7 @@
 #include "libs/algorithms/string/tasks/changeNumbersToSpaces.h"
 #include "libs/algorithms/string/tasks/changeW1ToW2.h"
 #include "libs/algorithms/string/tasks/areWordsOrdered.h"
+#include "libs/algorithms/string/tasks/printWordsInReversedOrder.h"
 
 # define ASSERT_STRING(expected, got) assertString ( expected , got , \
  __FILE__ , __FUNCTION__ , __LINE__ )
@@ -195,7 +196,7 @@ void test_changeW1toW2_equalWordsSize() {
 }
 
 
-void test_changeW1toW2(){
+void test_changeW1toW2() {
     test_changeW1toW2_oneChange();
     test_changeW1toW2_multiplyChange();
     test_changeW1toW2_equalWordsSize();
@@ -219,14 +220,21 @@ void test_areWordsOrdered() {
     test_areWordsOrdered_false();
 }
 
+void test_printWordsInReversedOrder() {
+    char s[] = "i want to start c++...";
+
+    printWordsInReversedOrder(s);
+}
+
 void test_tasks() {
-    test_removeNonLetters();
-    test_removeAdjacentEqualLetters();
-    test_reversedNumbersInBeginOfWordAndNormalLettersInEndOfWord();
-    test_everyWordReversed();
-    test_changeNumbersToSpaces();
-    test_changeW1toW2();
-    test_areWordsOrdered();
+//    test_removeNonLetters();
+//    test_removeAdjacentEqualLetters();
+//    test_reversedNumbersInBeginOfWordAndNormalLettersInEndOfWord();
+//    test_everyWordReversed();
+//    test_changeNumbersToSpaces();
+//    test_changeW1toW2();
+//    test_areWordsOrdered();
+    test_printWordsInReversedOrder();
 }
 
 int main() {

@@ -156,7 +156,7 @@
 		},
 		{
 			"backtrace" : 1,
-			"path" : "libs/algorithms/string/tasks/printEveryWordReversed.h",
+			"path" : "libs/algorithms/string/tasks/printWordsInReversedOrder.h",
 			"sourceGroupIndex" : 1
 		}
 	],
