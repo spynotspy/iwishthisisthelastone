@@ -9,6 +9,7 @@
 #include "libs/algorithms/string/tasks/printWordsInReversedOrder.h"
 #include "libs/algorithms/string/tasks/countPalindromes.h"
 #include "libs/algorithms/string/tasks/mixStrings.h"
+#include "libs/algorithms/string/tasks/reverseWordsOrder.h"
 
 
 # define ASSERT_STRING(expected, got) assertString ( expected , got , \
@@ -324,6 +325,25 @@ void test_mixStrings() {
     test_mixStrings_bothEqual();
 }
 
+void test_reverseWordsOrder_notEmpty() {
+    char s[] = "rather sleep than staying awake";
+    reverseWordsOrder(s);
+
+    ASSERT_STRING("awake staying than sleep rather", s);
+}
+
+
+void test_reverseWordsOrder_empty() {
+    char s[] = "";
+    reverseWordsOrder(s);
+
+    ASSERT_STRING("", s);
+}
+
+void test_reverseWordsOrder() {
+    test_reverseWordsOrder_empty();
+    test_reverseWordsOrder_notEmpty();
+}
 
 void test_tasks() {
     test_removeNonLetters();
@@ -336,7 +356,7 @@ void test_tasks() {
     //test_printWordsInReversedOrder();
     test_countPalindromes();
     test_mixStrings();
-
+    test_reverseWordsOrder();
 }
 
 int main() {

@@ -121,3 +121,13 @@ bool getWordReverse(char *rbegin, char *rend, WordDescriptor *word) {
 
     return true;
 }
+
+void getBagOfWords(BagOfWords *bag, char *s) {
+    char *beginSearch = s;
+    WordDescriptor *word = bag->words;
+    while (getWord(beginSearch, word)) {
+        beginSearch = word->end;
+        word++;
+        bag->size++;
+    }
+}

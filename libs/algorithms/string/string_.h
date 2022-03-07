@@ -60,4 +60,6 @@ bool getWord(char *beginSearch, WordDescriptor *word);
 
 bool getWordReverse(char *rbegin, char *rend, WordDescriptor *word);
 
+void getBagOfWords(BagOfWords *bag, char *s);
+
 #endif //MAIN_C_STRING__H

@@ -124,7 +124,8 @@
 				4,
 				5,
 				6,
-				7
+				7,
+				8
 			]
 		}
 	],
@@ -169,6 +170,11 @@
 		{
 			"backtrace" : 1,
 			"path" : "libs/algorithms/string/tasks/mixStrings.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"path" : "libs/algorithms/string/tasks/reverseWordsOrder.h",
 			"sourceGroupIndex" : 1
 		}
 	],

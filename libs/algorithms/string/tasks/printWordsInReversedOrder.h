@@ -7,16 +7,6 @@
 
 #include "../string_.h"
 
-void getBagOfWords(BagOfWords *bag, char *s) {
-    char *beginSearch = s;
-    WordDescriptor *word = bag->words;
-    while (getWord(beginSearch, word)) {
-        beginSearch = word->end;
-        word++;
-        bag->size++;
-    }
-}
-
 void outputWord(WordDescriptor word) {
     while (word.begin != word.end) {
         printf("%c", *word.begin);
