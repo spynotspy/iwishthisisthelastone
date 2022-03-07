@@ -121,7 +121,8 @@
 				1,
 				2,
 				3,
-				4
+				4,
+				5
 			]
 		}
 	],
@@ -151,6 +152,11 @@
 		{
 			"backtrace" : 1,
 			"path" : "libs/algorithms/string/tasks/areWordsOrdered.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"path" : "libs/algorithms/string/tasks/printEveryWordReversed.h",
 			"sourceGroupIndex" : 1
 		}
 	],

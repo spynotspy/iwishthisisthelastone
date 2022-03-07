@@ -160,16 +160,47 @@ void test_changeNumbersToSpaces() {
     ASSERT_STRING(expected, source);
 }
 
-void test_changeW1toW2() {
-    char source[] = "dima dimadima didi";
-    char w1[] = "dima";
-    char w2[] = "nasty";
-    char expected[] = "nasty dimadima didi";
+void test_changeW1toW2_oneChange() {
+    char source[] = "55 42";
+    char w1[] = "42";
+    char w2[] = "10";
+    char expected[] = "55 10";
 
     replace(source, w1, w2);
 
     ASSERT_STRING(expected, source);
 }
+
+void test_changeW1toW2_multiplyChange() {
+    char source[] = "nasty nasty 1";
+    char w1[] = "nasty";
+    char w2[] = "lipton";
+    char expected[] = "lipton lipton 1";
+
+    replace(source, w1, w2);
+
+    ASSERT_STRING(expected, source);
+}
+
+
+void test_changeW1toW2_equalWordsSize() {
+    char source[] = "qwerty lang qwerty";
+    char w1[] = "qwerty";
+    char w2[] = "123456";
+    char expected[] = "123456 lang 123456";
+
+    replace(source, w1, w2);
+
+    ASSERT_STRING(expected, source);
+}
+
+
+void test_changeW1toW2(){
+    test_changeW1toW2_oneChange();
+    test_changeW1toW2_multiplyChange();
+    test_changeW1toW2_equalWordsSize();
+}
+
 
 void test_areWordsOrdered_true() {
     char source[] = "alpha aw beta centre six";
@@ -194,7 +225,7 @@ void test_tasks() {
     test_reversedNumbersInBeginOfWordAndNormalLettersInEndOfWord();
     test_everyWordReversed();
     test_changeNumbersToSpaces();
-    //test_changeW1toW2();
+    test_changeW1toW2();
     test_areWordsOrdered();
 }
 

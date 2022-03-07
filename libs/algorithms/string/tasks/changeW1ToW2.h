@@ -6,27 +6,10 @@
 #define MAIN_C_CHANGEW1TOW2_H
 
 #include "../string_.h"
-
-//dima nasty  "dima dima didi" -> "nasty nasty didi"
+#include "areWordsOrdered.h"
 
 int wordSize(WordDescriptor w) {
     return w.end - w.begin;
-}
-
-bool isEqualWords(WordDescriptor w1, size_t w1Size, WordDescriptor w2, size_t w2Size) {
-    if (w1Size != w2Size) return false;
-    char *beginW1 = w1.begin;
-    char *beginW2 = w2.begin;
-
-    while (*w1.begin == *w2.begin) {
-        w1.begin++;
-        w2.begin++;
-    }
-    int howMuchSymbolsLeft = w1.end - w1.begin;
-    w1.begin = beginW1;
-    w2.begin = beginW2;
-
-    return howMuchSymbolsLeft == w1Size;
 }
 
 void replace(char *source, char *w1, char *w2) {
@@ -45,7 +28,24 @@ void replace(char *source, char *w1, char *w2) {
         recPtr = source;
     }
 
-    // продолжение функции
+    WordDescriptor searchingWord;
+
+    while (*readPtr != '\0') {
+        if (*readPtr == *word1.begin) {
+            getWord(readPtr, &searchingWord);
+            if (getWord(readPtr, &searchingWord)
+                && areWordsEqual(word1, searchingWord) <= 0) {
+
+                copy(word2.begin, word2.end, recPtr);
+                recPtr += w2Size;
+                readPtr += w1Size;
+
+            }
+
+        }
+        *recPtr++ = *readPtr++;
+    }
+    *recPtr = '\0';
 }
 
 #endif //MAIN_C_CHANGEW1TOW2_H

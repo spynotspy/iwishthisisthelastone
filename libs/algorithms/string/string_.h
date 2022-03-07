@@ -21,6 +21,13 @@ typedef struct WordDescriptor {
     char *end; // позиция первого символа, после последнего символа слова
 } WordDescriptor;
 
+typedef struct BagOfWords {
+    WordDescriptor words[MAX_N_WORDS_IN_STRING];
+    size_t size;
+} BagOfWords;
+
+static BagOfWords _bag;
+static BagOfWords _bag2;
 
 size_t strlen_(const char *begin);
 

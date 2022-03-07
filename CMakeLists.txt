@@ -3,7 +3,7 @@ project(5b C)
 
 set(CMAKE_C_STANDARD 11)
 
-add_executable(project main.c libs/algorithms/string/tasks/everyWordReversed.h libs/algorithms/string/tasks/changeNumbersToSpaces.h libs/algorithms/string/tasks/changeW1ToW2.h libs/algorithms/string/tasks/areWordsOrdered.h)
+add_executable(project main.c libs/algorithms/string/tasks/everyWordReversed.h libs/algorithms/string/tasks/changeNumbersToSpaces.h libs/algorithms/string/tasks/changeW1ToW2.h libs/algorithms/string/tasks/areWordsOrdered.h libs/algorithms/string/tasks/printEveryWordReversed.h)
 
 # создаём библиотеку
 add_library(str libs/algorithms/string/string_.h
