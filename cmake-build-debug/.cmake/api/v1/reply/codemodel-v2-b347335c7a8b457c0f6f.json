@@ -9,7 +9,7 @@
 					"jsonFile" : "directory-.-Debug-d0094a50bb2071803777.json",
 					"minimumCMakeVersion" : 
 					{
-						"string" : "3.21"
+						"string" : "3.20.2"
 					},
 					"projectIndex" : 0,
 					"source" : ".",
@@ -41,14 +41,14 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "project::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-project-Debug-520e588d589bb8f2830e.json",
+					"jsonFile" : "target-project-Debug-9606912833bd0ea04c86.json",
 					"name" : "project",
 					"projectIndex" : 0
 				},
 				{
 					"directoryIndex" : 0,
 					"id" : "str::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-str-Debug-191291a976a548f48fe1.json",
+					"jsonFile" : "target-str-Debug-027474ea77ce8ee25366.json",
 					"name" : "str",
 					"projectIndex" : 0
 				}

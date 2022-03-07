@@ -10,6 +10,7 @@
 #include "libs/algorithms/string/tasks/countPalindromes.h"
 #include "libs/algorithms/string/tasks/mixStrings.h"
 
+
 # define ASSERT_STRING(expected, got) assertString ( expected , got , \
  __FILE__ , __FUNCTION__ , __LINE__ )
 
@@ -245,10 +246,13 @@ void test_countPalindromes_empty() {
 }
 
 void test_countPalindromes() {
+
+
     test_countPalindromes_notZeroPalindromes();
     test_countPalindromes_zeroPalindromes();
     test_countPalindromes_empty();
 }
+
 
 void test_mixStrings_s1Longer() {
     char s[MAX_STRING_SIZE];
@@ -320,6 +324,7 @@ void test_mixStrings() {
     test_mixStrings_bothEqual();
 }
 
+
 void test_tasks() {
     test_removeNonLetters();
     test_removeAdjacentEqualLetters();
@@ -331,12 +336,12 @@ void test_tasks() {
     //test_printWordsInReversedOrder();
     test_countPalindromes();
     test_mixStrings();
+
 }
 
 int main() {
     //test_string();
     test_tasks();
-
 
     return 0;
 }

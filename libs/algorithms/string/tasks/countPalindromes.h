@@ -1,6 +1,5 @@
-//
-// Created by Dima on 08.03.2022.
-//
+
+
 
 #ifndef MAIN_C_COUNTPALINDROMES_H
 #define MAIN_C_COUNTPALINDROMES_H
