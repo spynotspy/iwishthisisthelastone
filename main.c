@@ -7,6 +7,8 @@
 #include "libs/algorithms/string/tasks/changeW1ToW2.h"
 #include "libs/algorithms/string/tasks/areWordsOrdered.h"
 #include "libs/algorithms/string/tasks/printWordsInReversedOrder.h"
+#include "libs/algorithms/string/tasks/countPalindromes.h"
+
 
 # define ASSERT_STRING(expected, got) assertString ( expected , got , \
  __FILE__ , __FUNCTION__ , __LINE__ )
@@ -226,21 +228,44 @@ void test_printWordsInReversedOrder() {
     printWordsInReversedOrder(s);
 }
 
+
+void test_countPalindromes_notZeroPalindromes() {
+    char s[] = "abba,abcba,qqww,w\t\t";
+
+    assert(countPalindromes(s) == 3);
+}
+
+void test_countPalindromes_zeroPalindromes() {
+    char s[] = "    aba, cd , efg ,     hi     ";
+    assert(countPalindromes(s) == 1);
+}
+
+void test_countPalindromes_empty() {
+    char s[] = "";
+    assert(countPalindromes(s) == 0);
+}
+
+void test_countPalindromes(){
+    test_countPalindromes_notZeroPalindromes();
+    test_countPalindromes_zeroPalindromes();
+    test_countPalindromes_empty();
+}
+
 void test_tasks() {
-//    test_removeNonLetters();
-//    test_removeAdjacentEqualLetters();
-//    test_reversedNumbersInBeginOfWordAndNormalLettersInEndOfWord();
-//    test_everyWordReversed();
-//    test_changeNumbersToSpaces();
-//    test_changeW1toW2();
-//    test_areWordsOrdered();
-    test_printWordsInReversedOrder();
+    test_removeNonLetters();
+    test_removeAdjacentEqualLetters();
+    test_reversedNumbersInBeginOfWordAndNormalLettersInEndOfWord();
+    test_everyWordReversed();
+    test_changeNumbersToSpaces();
+    test_changeW1toW2();
+    test_areWordsOrdered();
+    //test_printWordsInReversedOrder();
+    test_countPalindromes();
 }
 
 int main() {
     //test_string();
     test_tasks();
-
 
     return 0;
 }

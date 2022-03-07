@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/Dima/CLionProjects/git/libs/algorithms/string/string_.c
+string_.h
+C:/Users/Dima/CLionProjects/git/libs/algorithms/string/string_.h
+
+C:/Users/Dima/CLionProjects/git/libs/algorithms/string/string_.h
+stdio.h
+-
+ctype.h
+-
+memory.h
+-
+stdbool.h
+-
+
