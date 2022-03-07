@@ -7,6 +7,8 @@
 #include "libs/algorithms/string/tasks/changeW1ToW2.h"
 #include "libs/algorithms/string/tasks/areWordsOrdered.h"
 #include "libs/algorithms/string/tasks/printWordsInReversedOrder.h"
+#include "libs/algorithms/string/tasks/countPalindromes.h"
+#include "libs/algorithms/string/tasks/mixStrings.h"
 
 # define ASSERT_STRING(expected, got) assertString ( expected , got , \
  __FILE__ , __FUNCTION__ , __LINE__ )
@@ -226,15 +228,109 @@ void test_printWordsInReversedOrder() {
     printWordsInReversedOrder(s);
 }
 
+void test_countPalindromes_notZeroPalindromes() {
+    char s[] = "abba,abcba,qqww,w\t\t";
+
+    assert(countPalindromes(s) == 3);
+}
+
+void test_countPalindromes_zeroPalindromes() {
+    char s[] = "    aba, cd , efg ,     hi     ";
+    assert(countPalindromes(s) == 1);
+}
+
+void test_countPalindromes_empty() {
+    char s[] = "";
+    assert(countPalindromes(s) == 0);
+}
+
+void test_countPalindromes() {
+    test_countPalindromes_notZeroPalindromes();
+    test_countPalindromes_zeroPalindromes();
+    test_countPalindromes_empty();
+}
+
+void test_mixStrings_s1Longer() {
+    char s[MAX_STRING_SIZE];
+    char s1[] = "one three five";
+    char s2[] = "two four";
+
+    mixString(s, s1, s2);
+
+    ASSERT_STRING("one two three four five", s);
+}
+
+void test_mixStrings_s2Longer() {
+    char s[MAX_STRING_SIZE];
+    char s1[] = "one three";
+    char s2[] = "two four five";
+
+    mixString(s, s1, s2);
+
+    ASSERT_STRING("one two three four five", s);
+}
+
+void test_mixStrings_equalLength() {
+    char s[MAX_STRING_SIZE];
+    char s1[] = "one three five";
+    char s2[] = "two four six";
+
+    mixString(s, s1, s2);
+
+    ASSERT_STRING("one two three four five six", s);
+}
+
+void test_mixStrings_s1Empty() {
+    char s[MAX_STRING_SIZE];
+    char s1[] = "";
+    char s2[] = "two four";
+
+    mixString(s, s1, s2);
+
+    ASSERT_STRING("two four", s);
+}
+
+void test_mixStrings_s2Empty() {
+    char s[MAX_STRING_SIZE];
+    char s1[] = "one three five";
+    char s2[] = "";
+
+    mixString(s, s1, s2);
+
+    ASSERT_STRING("one three five", s);
+}
+
+void test_mixStrings_bothEqual() {
+    char s[MAX_STRING_SIZE];
+    char s1[] = "hehe haha";
+    char s2[] = "funny laugh";
+
+    mixString(s, s1, s2);
+
+    ASSERT_STRING("hehe funny haha laugh", s);
+}
+
+
+void test_mixStrings() {
+    test_mixStrings_s1Longer();
+    test_mixStrings_s2Longer();
+    test_mixStrings_equalLength();
+    test_mixStrings_s1Empty();
+    test_mixStrings_s2Empty();
+    test_mixStrings_bothEqual();
+}
+
 void test_tasks() {
-//    test_removeNonLetters();
-//    test_removeAdjacentEqualLetters();
-//    test_reversedNumbersInBeginOfWordAndNormalLettersInEndOfWord();
-//    test_everyWordReversed();
-//    test_changeNumbersToSpaces();
-//    test_changeW1toW2();
-//    test_areWordsOrdered();
-    test_printWordsInReversedOrder();
+    test_removeNonLetters();
+    test_removeAdjacentEqualLetters();
+    test_reversedNumbersInBeginOfWordAndNormalLettersInEndOfWord();
+    test_everyWordReversed();
+    test_changeNumbersToSpaces();
+    test_changeW1toW2();
+    test_areWordsOrdered();
+    //test_printWordsInReversedOrder();
+    test_countPalindromes();
+    test_mixStrings();
 }
 
 int main() {
