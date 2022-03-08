@@ -1,5 +1,6 @@
 file(REMOVE_RECURSE
   "CMakeFiles/str.dir/libs/algorithms/string/string_.c.obj"
+  "CMakeFiles/str.dir/libs/algorithms/string/string_.c.obj.d"
   "libstr.a"
   "libstr.pdb"
 )

@@ -13,6 +13,7 @@
 #include "libs/algorithms/string/tasks/printWordBeforeFirstWordWithA.h"
 #include "libs/algorithms/string/tasks/getLastWordFromRow1ThatInRow2.h"
 #include "libs/algorithms/string/tasks/hasEqualWordsInString.h"
+#include "libs/algorithms/string/tasks/isTwoWordsWithSameLettersInString.h"
 
 # define ASSERT_STRING(expected, got) assertString ( expected , got , \
  __FILE__ , __FUNCTION__ , __LINE__ )
@@ -464,6 +465,23 @@ void test_hasEqualWordsInString() {
     test_hasEqualWordsInString_oneWord();
 }
 
+void test_isTwoWordsWithSameLettersInString_true() {
+    char s[] = "qwerty haha ytrewq";
+
+    assert(isTwoWordsWithSameLettersInString(s) == 1);
+}
+
+void test_isTwoWordsWithSameLettersInString_false() {
+    char s[] = "qwerty dima nasty";
+
+    assert(isTwoWordsWithSameLettersInString(s) == 0);
+}
+
+void test_isTwoWordsWithSameLettersInString() {
+    test_isTwoWordsWithSameLettersInString_true();
+    test_isTwoWordsWithSameLettersInString_false();
+}
+
 void test_tasks() {
     test_removeNonLetters();
     test_removeAdjacentEqualLetters();
@@ -479,6 +497,7 @@ void test_tasks() {
     testAll_getWordBeforeFirstWordWithA();
     test_getLastWordFromRow1ThatInRow2();
     test_hasEqualWordsInString();
+    test_isTwoWordsWithSameLettersInString();
 }
 
 int main() {
