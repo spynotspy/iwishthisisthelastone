@@ -15,7 +15,8 @@ void makeSpaces(char **begin, int amountSpaces) {
         (*begin)++;
     }
 }
-
+//Преобразовать строку, заменяя каждую цифру соответствующим ей числом
+//пробелов.
 void changeNumbersToSpaces(char *s) {
     char *recPtr = s;
     char *readPtr = stringBuffer_;

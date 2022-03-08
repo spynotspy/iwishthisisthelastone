@@ -8,6 +8,7 @@
 #include "../string_.h"
 #include "changeW1ToW2.h"
 
+//Преобразовать строку, изменив порядок следования слов в строке на обратный
 void reverseWordsOrder(char *s) {
     char *endS = getEndOfString(s);
     copy(s, endS, stringBuffer_);

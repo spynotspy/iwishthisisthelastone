@@ -7,11 +7,12 @@
 
 #include "../string_.h"
 
-int areWordsEqual(WordDescriptor w1,
-                  WordDescriptor w2) {
-    return strcmp(w1.begin, w2.begin);
-}
+//int areWordsEqual(WordDescriptor w1,
+//                  WordDescriptor w2) {
+//    return strcmp(w1.begin, w2.begin);
+//}
 
+//Определить, упорядочены ли лексикографически слова данного предложения
 bool areWordsOrdered(char *source) {
     char *beginSearch = source;
     WordDescriptor previous;

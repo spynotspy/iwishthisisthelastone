@@ -126,7 +126,8 @@
 				6,
 				7,
 				8,
-				9
+				9,
+				10
 			]
 		}
 	],
@@ -181,6 +182,11 @@
 		{
 			"backtrace" : 1,
 			"path" : "libs/algorithms/string/tasks/printWordBeforeFirstWordWithA.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"path" : "libs/algorithms/string/tasks/getLastWordFromRow1ThatInRow2.h",
 			"sourceGroupIndex" : 1
 		}
 	],

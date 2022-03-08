@@ -14,7 +14,7 @@ void outputWord(WordDescriptor word) {
     }
     printf("\n");
 }
-
+//Вывести слова данной строки в обратном порядке по одному в строке экрана.
 void printWordsInReversedOrder(char *s) {
     getBagOfWords(&_bag, s);
     int size = 1;

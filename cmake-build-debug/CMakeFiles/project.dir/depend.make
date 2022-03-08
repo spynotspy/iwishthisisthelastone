@@ -8,6 +8,7 @@ CMakeFiles/project.dir/main.c.obj: \
  ../libs/algorithms/string/tasks/changeW1ToW2.h \
  ../libs/algorithms/string/tasks/countPalindromes.h \
  ../libs/algorithms/string/tasks/everyWordReversed.h \
+ ../libs/algorithms/string/tasks/getLastWordFromRow1ThatInRow2.h \
  ../libs/algorithms/string/tasks/mixStrings.h \
  ../libs/algorithms/string/tasks/printWordBeforeFirstWordWithA.h \
  ../libs/algorithms/string/tasks/printWordsInReversedOrder.h \

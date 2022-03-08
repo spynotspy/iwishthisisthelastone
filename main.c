@@ -11,7 +11,7 @@
 #include "libs/algorithms/string/tasks/mixStrings.h"
 #include "libs/algorithms/string/tasks/reverseWordsOrder.h"
 #include "libs/algorithms/string/tasks/printWordBeforeFirstWordWithA.h"
-
+#include "libs/algorithms/string/tasks/getLastWordFromRow1ThatInRow2.h"
 
 # define ASSERT_STRING(expected, got) assertString ( expected , got , \
  __FILE__ , __FUNCTION__ , __LINE__ )
@@ -374,6 +374,63 @@ void testAll_getWordBeforeFirstWordWithA() {
             NOT_FOUND_A_WORD_WITH_A);
 }
 
+void test_getLastWordFromRow1ThatInRow2_notEmptyStrings() {
+    char s1[] = "qwe zxc";
+    char s2[] = "zxc kiki";
+    char res[MAX_STRING_SIZE];
+
+    WordDescriptor word = getLastWordFromRow1ThatInRow2(s1, s2);
+    wordDescriptorToString(word, res);
+    ASSERT_STRING ("zxc", res);
+}
+
+void test_getLastWordFromRow1ThatInRow2_noUnion() {
+    char s1[] = "raz dva";
+    char s2[] = "tri 4etire";
+    char res[MAX_STRING_SIZE];
+
+    WordDescriptor word = getLastWordFromRow1ThatInRow2(s1, s2);
+    wordDescriptorToString(word, res);
+    ASSERT_STRING ("", res);
+}
+
+void test_getLastWordFromRow1ThatInRow2_emptyRow2() {
+    char s1[] = "raz dva";
+    char s2[] = "";
+    char res[MAX_STRING_SIZE];
+
+    WordDescriptor word = getLastWordFromRow1ThatInRow2(s1, s2);
+    wordDescriptorToString(word, res);
+    ASSERT_STRING ("", res);
+}
+
+void test_getLastWordFromRow1ThatInRow2_emptyRow1() {
+    char s1[] = "";
+    char s2[] = "need to buy flowers :c";
+    char res[MAX_STRING_SIZE];
+
+    WordDescriptor word = getLastWordFromRow1ThatInRow2(s1, s2);
+    wordDescriptorToString(word, res);
+    ASSERT_STRING ("", res);
+}
+
+void test_getLastWordFromRow1ThatInRow2_emptyStrings() {
+    char s1[] = "";
+    char s2[] = "";
+    char res[MAX_STRING_SIZE];
+
+    WordDescriptor word = getLastWordFromRow1ThatInRow2(s1, s2);
+    wordDescriptorToString(word, res);
+    ASSERT_STRING ("", res);
+}
+
+void test_getLastWordFromRow1ThatInRow2() {
+    test_getLastWordFromRow1ThatInRow2_notEmptyStrings();
+    test_getLastWordFromRow1ThatInRow2_noUnion();
+    test_getLastWordFromRow1ThatInRow2_emptyRow2();
+    test_getLastWordFromRow1ThatInRow2_emptyRow1();
+    test_getLastWordFromRow1ThatInRow2_emptyStrings();
+}
 
 void test_tasks() {
     test_removeNonLetters();
@@ -388,6 +445,7 @@ void test_tasks() {
     test_mixStrings();
     test_reverseWordsOrder();
     testAll_getWordBeforeFirstWordWithA();
+    test_getLastWordFromRow1ThatInRow2();
 }
 
 int main() {

@@ -131,6 +131,9 @@
 		<Unit filename="C:/Users/Dima/CLionProjects/fromGIT/libs/algorithms/string/tasks/everyWordReversed.h">
 			<Option target="project"/>
 		</Unit>
+		<Unit filename="C:/Users/Dima/CLionProjects/fromGIT/libs/algorithms/string/tasks/getLastWordFromRow1ThatInRow2.h">
+			<Option target="project"/>
+		</Unit>
 		<Unit filename="C:/Users/Dima/CLionProjects/fromGIT/libs/algorithms/string/tasks/mixStrings.h">
 			<Option target="project"/>
 		</Unit>

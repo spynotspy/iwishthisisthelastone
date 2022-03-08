@@ -16,7 +16,10 @@ void digitToStart(WordDescriptor word) {
     copyIf(stringBuffer_, endStringBuffer, recPosition, isalpha);
 }
 
-
+//преобразовать строку таким образом, чтобы цифры
+//каждого слова были перенесены в начало слова и изменить порядок следования
+//цифр в слове на обратный, а буквы – в конец слова, без изменения порядка
+//следования.
 void reversedNumbersInBeginOfWordAndNormalLettersInEndOfWord(char *beginString) {
     char *beginSearch = beginString;
 

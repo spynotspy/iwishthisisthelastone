@@ -11,7 +11,7 @@
 int wordSize(WordDescriptor w) {
     return w.end - w.begin;
 }
-
+//Заменить все вхождения слова 𝑤1 на слово 𝑤2.
 void replace(char *source, char *w1, char *w2) {
     size_t w1Size = strlen_(w1);
     size_t w2Size = strlen_(w2);

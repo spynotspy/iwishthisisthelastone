@@ -38,6 +38,10 @@ C:/Users/Dima/CLionProjects/fromGIT/libs/algorithms/string/tasks/everyWordRevers
 ../string_.h
 C:/Users/Dima/CLionProjects/fromGIT/libs/algorithms/string/string_.h
 
+C:/Users/Dima/CLionProjects/fromGIT/libs/algorithms/string/tasks/getLastWordFromRow1ThatInRow2.h
+../string_.h
+C:/Users/Dima/CLionProjects/fromGIT/libs/algorithms/string/string_.h
+
 C:/Users/Dima/CLionProjects/fromGIT/libs/algorithms/string/tasks/mixStrings.h
 ../string_.h
 C:/Users/Dima/CLionProjects/fromGIT/libs/algorithms/string/string_.h
@@ -97,4 +101,6 @@ libs/algorithms/string/tasks/reverseWordsOrder.h
 C:/Users/Dima/CLionProjects/fromGIT/libs/algorithms/string/tasks/reverseWordsOrder.h
 libs/algorithms/string/tasks/printWordBeforeFirstWordWithA.h
 C:/Users/Dima/CLionProjects/fromGIT/libs/algorithms/string/tasks/printWordBeforeFirstWordWithA.h
+libs/algorithms/string/tasks/getLastWordFromRow1ThatInRow2.h
+C:/Users/Dima/CLionProjects/fromGIT/libs/algorithms/string/tasks/getLastWordFromRow1ThatInRow2.h
 

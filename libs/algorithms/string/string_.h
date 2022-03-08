@@ -62,4 +62,7 @@ bool getWordReverse(char *rbegin, char *rend, WordDescriptor *word);
 
 void getBagOfWords(BagOfWords *bag, char *s);
 
+int areWordsEqual(WordDescriptor word1,
+                  WordDescriptor word2);
+
 #endif //MAIN_C_STRING__H

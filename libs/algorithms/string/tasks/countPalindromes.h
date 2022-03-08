@@ -23,6 +23,8 @@ bool isPalindrome(WordDescriptor word) {
     return true;
 }
 
+//В данной строке соседние слова разделены запятыми. Определить количество
+//слов-палиндромов.
 int countPalindromes(char *s) {
     char *begin = findNonSpace(s);
     char *end = getEndOfString(s);

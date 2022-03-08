@@ -24,7 +24,8 @@ bool checkInWordA(WordDescriptor word) {
     return false;
 }
 
-// заголовок функции
+//Вывести слово данной строки, предшествующее первому из слов, содержащих
+//букву "а". Регистр значения не имеет.
 WordBeforeFirstWordWithAReturnCode getWordBeforeFirstWordWithA(
         char *s, char **beginWordBefore, char **endWordBefore) {
 

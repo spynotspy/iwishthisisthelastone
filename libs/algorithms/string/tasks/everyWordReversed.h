@@ -14,13 +14,11 @@
 //    copyReverse(endStringBuffer - 1, stringBuffer_ - 1, word.begin);
 //}
 
-
 void swapChar(char *a, char *b) {
     char t = *a;
     *a = *b;
     *b = t;
 }
-
 
 void reverseWord_v2(WordDescriptor word) {
     char *beginReversedWord = word.begin;
@@ -36,6 +34,7 @@ void reverseWord_v2(WordDescriptor word) {
     word.end = endReversedWord;
 }
 
+// Преобразовать строку, обратив каждое слово этой строки
 void everyWordReversed(char *begin) {
     char *beginSearch = begin;
     WordDescriptor word;

@@ -7,6 +7,7 @@
 
 #include "../string_.h"
 
+//Преобразовать строку, оставляя только один символ в каждой последовательности подряд идущих одинаковых символов
 void removeAdjacentEqualLetters(char *s) {
     char symbol = *s;
     char *newStringEnd = s + 1;
