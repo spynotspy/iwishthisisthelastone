@@ -42,6 +42,10 @@ C:/Users/Dima/CLionProjects/fromGIT/libs/algorithms/string/tasks/getLastWordFrom
 ../string_.h
 C:/Users/Dima/CLionProjects/fromGIT/libs/algorithms/string/string_.h
 
+C:/Users/Dima/CLionProjects/fromGIT/libs/algorithms/string/tasks/hasEqualWordsInString.h
+../string_.h
+C:/Users/Dima/CLionProjects/fromGIT/libs/algorithms/string/string_.h
+
 C:/Users/Dima/CLionProjects/fromGIT/libs/algorithms/string/tasks/mixStrings.h
 ../string_.h
 C:/Users/Dima/CLionProjects/fromGIT/libs/algorithms/string/string_.h
@@ -103,4 +107,6 @@ libs/algorithms/string/tasks/printWordBeforeFirstWordWithA.h
 C:/Users/Dima/CLionProjects/fromGIT/libs/algorithms/string/tasks/printWordBeforeFirstWordWithA.h
 libs/algorithms/string/tasks/getLastWordFromRow1ThatInRow2.h
 C:/Users/Dima/CLionProjects/fromGIT/libs/algorithms/string/tasks/getLastWordFromRow1ThatInRow2.h
+libs/algorithms/string/tasks/hasEqualWordsInString.h
+C:/Users/Dima/CLionProjects/fromGIT/libs/algorithms/string/tasks/hasEqualWordsInString.h
 

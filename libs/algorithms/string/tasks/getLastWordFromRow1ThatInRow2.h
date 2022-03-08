@@ -18,10 +18,13 @@ WordDescriptor getLastWordFromRow1ThatInRow2(char *s1, char *s2) {
     getBagOfWords(&_bag2, s2);
 
     WordDescriptor word;
-    for (int i = _bag.size - 1; i >= 0; --i) {
-        for (int j = 0; j < _bag2.size; ++j) {
-            if (areWordsEqual(_bag.words[i], _bag2.words[j]) == 0) {
-                word = _bag.words[i];
+    WordDescriptor *endOfArray1 = _bag.words + _bag.size;
+    WordDescriptor *endOfArray2 = _bag2.words + _bag2.size;
+
+    for (WordDescriptor *wordFromRow1 = endOfArray1; wordFromRow1 != _bag.words; wordFromRow1--) {
+        for (WordDescriptor *wordFromRow2 = _bag2.words; wordFromRow2 != endOfArray2; ++wordFromRow2) {
+            if (areWordsEqual(*wordFromRow1, *wordFromRow2) == 0) {
+                word = *wordFromRow1;
                 return word;
             }
         }

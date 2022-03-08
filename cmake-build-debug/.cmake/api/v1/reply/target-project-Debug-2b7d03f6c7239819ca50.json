@@ -127,7 +127,8 @@
 				7,
 				8,
 				9,
-				10
+				10,
+				11
 			]
 		}
 	],
@@ -187,6 +188,11 @@
 		{
 			"backtrace" : 1,
 			"path" : "libs/algorithms/string/tasks/getLastWordFromRow1ThatInRow2.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"path" : "libs/algorithms/string/tasks/hasEqualWordsInString.h",
 			"sourceGroupIndex" : 1
 		}
 	],
