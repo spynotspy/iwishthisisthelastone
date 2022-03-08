@@ -6,7 +6,6 @@
 			[
 				{
 					"build" : ".",
-					"jsonFile" : "directory-.-Debug-d0094a50bb2071803777.json",
 					"minimumCMakeVersion" : 
 					{
 						"string" : "3.20.2"
@@ -41,7 +40,7 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "project::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-project-Debug-fafb40f8097cfa5f3c30.json",
+					"jsonFile" : "target-project-Debug-445178f2d60479d63b88.json",
 					"name" : "project",
 					"projectIndex" : 0
 				},
@@ -58,12 +57,12 @@
 	"kind" : "codemodel",
 	"paths" : 
 	{
-		"build" : "C:/Users/Dima/CLionProjects/5b/cmake-build-debug",
-		"source" : "C:/Users/Dima/CLionProjects/5b"
+		"build" : "C:/Users/Dima/CLionProjects/fromGIT/cmake-build-debug",
+		"source" : "C:/Users/Dima/CLionProjects/fromGIT"
 	},
 	"version" : 
 	{
 		"major" : 2,
-		"minor" : 3
+		"minor" : 2
 	}
 }

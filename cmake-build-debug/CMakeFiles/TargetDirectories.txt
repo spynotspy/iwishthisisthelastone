@@ -1,4 +1,4 @@
-C:/Users/Dima/CLionProjects/5b/cmake-build-debug/CMakeFiles/project.dir
-C:/Users/Dima/CLionProjects/5b/cmake-build-debug/CMakeFiles/edit_cache.dir
-C:/Users/Dima/CLionProjects/5b/cmake-build-debug/CMakeFiles/str.dir
-C:/Users/Dima/CLionProjects/5b/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+C:/Users/Dima/CLionProjects/fromGIT/cmake-build-debug/CMakeFiles/project.dir
+C:/Users/Dima/CLionProjects/fromGIT/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/Dima/CLionProjects/fromGIT/cmake-build-debug/CMakeFiles/str.dir
+C:/Users/Dima/CLionProjects/fromGIT/cmake-build-debug/CMakeFiles/rebuild_cache.dir
